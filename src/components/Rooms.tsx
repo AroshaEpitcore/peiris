@@ -2,10 +2,12 @@
 
 import React, { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { Check, Clock, Home, Building2, ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { Check, Clock, Home, Building2, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 
 const services = [
   {
+    id: "residential-cleaning",
     name: "Regular Home Cleaning",
     description:
       "Keep your home consistently clean and fresh. We handle kitchens, bathrooms, living areas, and bedrooms with care and attention to detail.",
@@ -20,6 +22,7 @@ const services = [
     popular: false,
   },
   {
+    id: "deep-cleaning",
     name: "Deep Cleaning",
     description:
       "Thorough deep cleaning covering every corner, removing built-up grime and leaving your space sparkling clean.",
@@ -34,6 +37,7 @@ const services = [
     popular: true,
   },
   {
+    id: "move-in-out-cleaning",
     name: "End of Tenancy Cleaning",
     description:
       "Comprehensive cleaning for move-in or move-out. We ensure every surface is spotless to help you get your deposit back.",
@@ -48,6 +52,7 @@ const services = [
     popular: true,
   },
   {
+    id: "office-cleaning",
     name: "Office & Commercial Cleaning",
     description:
       "Professional cleaning for offices, shops, and commercial spaces. Keep your business environment fresh and productive.",
@@ -208,95 +213,92 @@ export default function Rooms() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {services.map((service) => (
-            <motion.div
-              key={service.name}
-              variants={itemVariants}
-              whileHover={{ y: -10 }}
-              className={`relative bg-card rounded-3xl overflow-hidden shadow-lg border-2 transition-all duration-300 ${
-                service.popular
-                  ? "border-primary ring-2 ring-primary/20"
-                  : "border-border hover:border-primary/30"
-              }`}
-            >
-              {/* Popular Badge */}
-              {service.popular && (
-                <div className="absolute top-4 right-4 z-10">
-                  <span className="px-4 py-2 rounded-full bg-accent text-primary-dark text-sm font-semibold">
-                    Popular
-                  </span>
-                </div>
-              )}
-
-              {/* Image Carousel */}
-              <div className="relative">
-                <ImageCarousel images={service.images} serviceName={service.name} />
-                <div className="absolute bottom-4 left-4 flex gap-2 z-10">
-                  <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                    {service.type === "home" ? (
-                      <Home className="w-5 h-5 text-white" />
-                    ) : (
-                      <Building2 className="w-5 h-5 text-white" />
-                    )}
+          {services.slice(0, 3).map((service) => (
+            <Link key={service.name} href={`/rooms/${service.id}`} className="block">
+              <motion.div
+                variants={itemVariants}
+                whileHover={{ y: -10 }}
+                className={`relative bg-card rounded-3xl overflow-hidden shadow-lg border-2 transition-all duration-300 cursor-pointer h-full ${
+                  service.popular
+                    ? "border-primary ring-2 ring-primary/20"
+                    : "border-border hover:border-primary/30"
+                }`}
+              >
+                {/* Popular Badge */}
+                {service.popular && (
+                  <div className="absolute top-4 right-4 z-10">
+                    <span className="px-4 py-2 rounded-full bg-accent text-primary-dark text-sm font-semibold">
+                      Popular
+                    </span>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-white" />
-                  </div>
-                </div>
-              </div>
+                )}
 
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-lg font-bold text-foreground mb-3">
-                  {service.name}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                  {service.description}
-                </p>
-
-                {/* Service Details */}
-                <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    <span>{service.duration}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    {service.type === "home" ? (
-                      <Home className="w-4 h-4" />
-                    ) : (
-                      <Building2 className="w-4 h-4" />
-                    )}
-                    <span className="capitalize">{service.type}</span>
-                  </div>
-                </div>
-
-                {/* Features */}
-                <div className="space-y-2 mb-5">
-                  {service.features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                      <span className="text-foreground text-sm">{feature}</span>
+                {/* Image Carousel */}
+                <div className="relative">
+                  <ImageCarousel images={service.images} serviceName={service.name} />
+                  <div className="absolute bottom-4 left-4 flex gap-2 z-10">
+                    <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      {service.type === "home" ? (
+                        <Home className="w-5 h-5 text-white" />
+                      ) : (
+                        <Building2 className="w-5 h-5 text-white" />
+                      )}
                     </div>
-                  ))}
+                    <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <Clock className="w-5 h-5 text-white" />
+                    </div>
+                  </div>
                 </div>
 
-                {/* CTA */}
-                <motion.a
-                  href="#contact"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`btn w-full text-center text-sm ${
-                    service.popular
-                      ? "btn-primary"
-                      : "btn-secondary"
-                  }`}
-                >
-                  Get a Free Quote
-                </motion.a>
-              </div>
-            </motion.div>
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-3">
+                    {service.name}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                    {service.description}
+                  </p>
+
+                  {/* Service Details */}
+                  <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      <span>{service.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      {service.type === "home" ? (
+                        <Home className="w-4 h-4" />
+                      ) : (
+                        <Building2 className="w-4 h-4" />
+                      )}
+                      <span className="capitalize">{service.type}</span>
+                    </div>
+                  </div>
+
+                  {/* Features */}
+                  <div className="space-y-2 mb-5">
+                    {service.features.map((feature) => (
+                      <div key={feature} className="flex items-center gap-2">
+                        <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span className="text-foreground text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <div
+                    className={`btn w-full text-center text-sm flex items-center justify-center gap-2 ${
+                      service.popular ? "btn-primary" : "btn-secondary"
+                    }`}
+                  >
+                    View Details
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
 

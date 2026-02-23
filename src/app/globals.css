@@ -323,19 +323,99 @@ section {
 .hero-gradient {
   background: linear-gradient(
     135deg,
-    rgba(14, 58, 92, 0.92) 0%,
-    rgba(26, 82, 118, 0.85) 50%,
-    rgba(14, 58, 92, 0.78) 100%
+    rgba(14, 58, 92, 0.35) 0%,
+    rgba(26, 82, 118, 0.25) 50%,
+    rgba(14, 58, 92, 0.20) 100%
   );
 }
 
 .dark .hero-gradient {
   background: linear-gradient(
     135deg,
-    rgba(13, 21, 32, 0.95) 0%,
-    rgba(19, 32, 48, 0.9) 50%,
-    rgba(13, 21, 32, 0.85) 100%
+    rgba(13, 21, 32, 0.40) 0%,
+    rgba(19, 32, 48, 0.30) 50%,
+    rgba(13, 21, 32, 0.25) 100%
   );
+}
+
+/* ============================================
+   EXPAND IMAGE SECTION
+   ============================================ */
+
+.expand-img-main {
+  overflow: hidden;
+}
+
+.expand-img {
+  width: 100%;
+  display: block;
+}
+
+/* ============================================
+   HOME ABOUT SECTION
+   ============================================ */
+
+.about-box-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.about-svg-main {
+  width: 64px;
+  min-width: 64px;
+  height: 64px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.about-box-main:hover .about-svg-main {
+  background: #00C2FF;
+}
+
+.about-svg-main svg {
+  color: #fff;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.about-box-main:hover .about-svg-main svg {
+  transform: rotateY(180deg);
+}
+
+.about-img2 {
+  position: absolute;
+  top: -60px;
+  left: 130px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.20);
+  animation: mover 2s infinite alternate;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border: 4px solid white;
+}
+
+.about-img3 {
+  position: absolute;
+  bottom: -80px;
+  right: 60px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.20);
+  animation: mover 2s infinite alternate;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 4px solid white;
+}
+
+@keyframes mover {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
 }
 
 /* ============================================

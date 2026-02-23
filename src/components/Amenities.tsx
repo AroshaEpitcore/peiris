@@ -162,40 +162,6 @@ export default function Amenities() {
           ))}
         </motion.div>
 
-        {/* Bottom Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-16 relative rounded-3xl overflow-hidden"
-        >
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url('https://iili.io/fiM4U1R.jpg')`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          />
-          <div className="absolute inset-0 bg-primary/80" />
-          <div className="relative z-10 p-10 md:p-16 text-center text-white">
-            <h3 className="text-2xl md:text-4xl font-bold mb-4">
-              Experience the Clean Difference
-            </h3>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto mb-8">
-              From the first consultation, our dedicated team ensures every
-              surface, corner, and detail meets our exacting standards.
-            </p>
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn bg-white text-primary font-semibold hover:bg-white/90"
-            >
-              Get a Free Quote
-            </motion.a>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

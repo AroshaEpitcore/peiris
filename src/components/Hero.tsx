@@ -6,11 +6,9 @@ import { gsap } from "gsap";
 import { ChevronDown, Shield, Star, Users, Phone } from "lucide-react";
 
 const heroImages = [
-  "https://iili.io/fiMUhJt.jpg",
-  "https://iili.io/fiMUWgI.jpg",
-  "https://iili.io/fiMkXwv.jpg",
-  "https://iili.io/fiMUMfp.jpg",
-  "https://iili.io/fiMUwen.jpg",
+  "https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo2/wp-content/uploads/sites/6/2021/08/slide-1.jpg",
+  "https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo2/wp-content/uploads/sites/6/2021/08/slide-2.jpg",
+  "https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo2/wp-content/uploads/sites/6/2025/06/slide-3.jpg",
 ];
 
 export default function Hero() {

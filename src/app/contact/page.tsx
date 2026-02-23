@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar";
 import PageBanner from "@/components/PageBanner";
 import Contact from "@/components/Contact";
+import NeedClean from "@/components/NeedClean";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -18,6 +19,7 @@ export default function ContactPage() {
         backgroundImage="https://iili.io/fiMUezG.jpg"
       />
       <Contact />
+      <NeedClean />
       <Footer />
       <ScrollToTop />
     </main>

@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar";
 import PageBanner from "@/components/PageBanner";
 import Location from "@/components/Location";
+import NeedClean from "@/components/NeedClean";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -18,6 +19,7 @@ export default function LocationPage() {
         backgroundImage="https://iili.io/fiMUkXf.jpg"
       />
       <Location />
+      <NeedClean />
       <Footer />
       <ScrollToTop />
     </main>

@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import PageBanner from "@/components/PageBanner";
+import NeedClean from "@/components/NeedClean";
+import ExpandImg from "@/components/ExpandImg";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Clock, Home, Building2, Check, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
@@ -370,6 +372,8 @@ export default function RoomsPage() {
         </div>
       </section>
 
+      <ExpandImg />
+      <NeedClean />
       <Footer />
       <ScrollToTop />
     </main>

@@ -3,6 +3,8 @@
 import Navbar from "@/components/Navbar";
 import PageBanner from "@/components/PageBanner";
 import Amenities from "@/components/Amenities";
+import NeedClean from "@/components/NeedClean";
+import ExpandImg from "@/components/ExpandImg";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -18,6 +20,8 @@ export default function AmenitiesPage() {
         backgroundImage="https://iili.io/fiM4WgV.jpg"
       />
       <Amenities />
+      <ExpandImg />
+      <NeedClean />
       <Footer />
       <ScrollToTop />
     </main>

@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar";
 import PageBanner from "@/components/PageBanner";
 import Gallery from "@/components/Gallery";
+import NeedClean from "@/components/NeedClean";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -18,6 +19,7 @@ export default function GalleryPage() {
         backgroundImage="https://iili.io/fiMUWgI.jpg"
       />
       <Gallery />
+      <NeedClean />
       <Footer />
       <ScrollToTop />
     </main>

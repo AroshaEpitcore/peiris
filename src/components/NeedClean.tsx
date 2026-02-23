@@ -1,0 +1,66 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+export default function NeedClean() {
+  return (
+    <section className="relative overflow-hidden py-20 md:py-28">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url('https://html.designingmedia.com/cleanmax/assets/images/need-backgroundimage.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      <div className="container relative z-10">
+        <div className="max-w-2xl">
+          <motion.h6
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-accent font-semibold text-base uppercase tracking-widest mb-4"
+          >
+            Need a Deep Clean?
+          </motion.h6>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-3xl md:text-5xl font-bold text-white leading-tight mb-8"
+          >
+            Experience the Best Cleaning Service Today!
+          </motion.h2>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn btn-primary inline-flex items-center gap-2 text-base px-8 py-4"
+              >
+                Request a Quote
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}

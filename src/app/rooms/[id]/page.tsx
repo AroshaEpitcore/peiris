@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import Navbar from "@/components/Navbar";
+import NeedClean from "@/components/NeedClean";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import {
@@ -463,6 +464,7 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
+      <NeedClean />
       <Footer />
       <ScrollToTop />
     </main>

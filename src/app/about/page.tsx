@@ -2,7 +2,9 @@
 
 import Navbar from "@/components/Navbar";
 import PageBanner from "@/components/PageBanner";
-import About from "@/components/About";
+import HomeAbout from "@/components/HomeAbout";
+import NeedClean from "@/components/NeedClean";
+import ExpandImg from "@/components/ExpandImg";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -17,7 +19,9 @@ export default function AboutPage() {
         description="Discover the story behind our commitment to delivering spotless, professional cleaning services."
         backgroundImage="https://iili.io/fiM4hdB.jpg"
       />
-      <About />
+       <HomeAbout />
+      <ExpandImg />
+      <NeedClean />
       <Footer />
       <ScrollToTop />
     </main>

@@ -65,6 +65,16 @@ export default function Contact() {
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl translate-x-1/2" />
 
+      {/* Cleaning girl image — fixed bottom right */}
+      <motion.img
+        src="https://html.designingmedia.com/letsclean/assets/images/home-girls-img.png"
+        alt="Cleaning professional"
+        initial={{ opacity: 0, y: 40 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.5, duration: 0.7 }}
+        className="absolute bottom-0 right-0 h-52 object-contain z-10 pointer-events-none"
+      />
+
       <div className="container relative z-10">
         {/* Section Header */}
         <div className="section-header">
@@ -166,6 +176,7 @@ export default function Contact() {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
+            className="relative"
           >
             <h3 className="text-2xl font-semibold text-foreground mb-6">
               Request a Free Quote
@@ -233,6 +244,7 @@ export default function Contact() {
                 </p>
               </form>
             </motion.div>
+
           </motion.div>
         </div>
       </div>
