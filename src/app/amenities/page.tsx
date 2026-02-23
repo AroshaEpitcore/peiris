@@ -6,6 +6,8 @@ import Amenities from "@/components/Amenities";
 import NeedClean from "@/components/NeedClean";
 import ExpandImg from "@/components/ExpandImg";
 import Footer from "@/components/Footer";
+import HomeAbout from "@/components/HomeAbout";
+
 import ScrollToTop from "@/components/ScrollToTop";
 
 export default function AmenitiesPage() {
@@ -19,8 +21,10 @@ export default function AmenitiesPage() {
         description="We go above and beyond to deliver cleaning services that set the standard for quality and professionalism."
         backgroundImage="https://iili.io/fiM4WgV.jpg"
       />
-      <Amenities />
+      <HomeAbout />
       <ExpandImg />
+      <Amenities />
+      
       <NeedClean />
       <Footer />
       <ScrollToTop />

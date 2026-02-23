@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar";
 import PageBanner from "@/components/PageBanner";
 import HomeAbout from "@/components/HomeAbout";
+import MarqueeSection from "@/components/MarqueeSection";
 import NeedClean from "@/components/NeedClean";
 import ExpandImg from "@/components/ExpandImg";
 import Footer from "@/components/Footer";
@@ -20,7 +21,9 @@ export default function AboutPage() {
         backgroundImage="https://iili.io/fiM4hdB.jpg"
       />
        <HomeAbout />
-      <ExpandImg />
+        <ExpandImg />
+      <MarqueeSection />
+     
       <NeedClean />
       <Footer />
       <ScrollToTop />

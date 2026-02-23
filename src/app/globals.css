@@ -563,3 +563,45 @@ button {
   background-color: rgba(26, 82, 118, 0.2);
   transform: scale(1.1);
 }
+
+/* ============================================
+   MARQUEE SECTION
+   ============================================ */
+
+.marquee-section {
+  background-color: var(--primary);
+  padding: 2.25rem 0;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marqueeScroll 22s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-word {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0 2.5rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.marquee-star {
+  color: var(--accent);
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
