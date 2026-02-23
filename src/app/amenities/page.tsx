@@ -1,0 +1,25 @@
+"use client";
+
+import Navbar from "@/components/Navbar";
+import PageBanner from "@/components/PageBanner";
+import Amenities from "@/components/Amenities";
+import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
+
+export default function AmenitiesPage() {
+  return (
+    <main className="min-h-screen">
+      <Navbar />
+      <PageBanner
+        badge="Why Choose Us"
+        title="The Peiris"
+        highlight="Difference"
+        description="We go above and beyond to deliver cleaning services that set the standard for quality and professionalism."
+        backgroundImage="https://iili.io/fiM4WgV.jpg"
+      />
+      <Amenities />
+      <Footer />
+      <ScrollToTop />
+    </main>
+  );
+}
