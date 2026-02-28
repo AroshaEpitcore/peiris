@@ -27,21 +27,21 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-2 py-2 rounded-full transition-all duration-300 bg-card/90 backdrop-blur-lg shadow-lg border border-border text-foreground"
+        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-2 py-2 rounded-full transition-all duration-300 bg-card/90 backdrop-blur-lg shadow-lg border border-border text-foreground w-[calc(100%-2rem)] sm:w-[calc(100%-6rem)] max-w-5xl"
       >
-        <div className="flex items-center gap-1 md:gap-2">
+        <div className="flex items-center justify-between w-full px-2">
           {/* Logo */}
           <Link href="/">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-3 py-1 rounded-full font-bold transition-colors cursor-pointer"
+              className="flex items-center gap-2 px-2 py-1 rounded-full font-bold transition-colors cursor-pointer"
             >
               <Image
                 src="/images/logopng.png"
                 alt="Peiris Cleaning Solutions"
-                width={40}
-                height={40}
+                width={52}
+                height={52}
                 className="object-contain"
               />
               <span className="hidden sm:inline text-sm font-bold text-primary">
@@ -50,7 +50,7 @@ export default function Navbar() {
             </motion.div>
           </Link>
 
-          {/* Desktop Nav Items */}
+          {/* Desktop Nav Items — centered */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <Link key={item.name} href={item.href}>
@@ -67,64 +67,36 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Get Quote Button */}
-          <Link href="/contact">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="hidden sm:flex px-6 py-2 rounded-full bg-accent text-primary-dark text-sm font-semibold hover:bg-accent/90 transition-colors whitespace-nowrap shadow-md cursor-pointer"
+          {/* Right: Get Quote + Theme Toggle + Mobile Menu */}
+          <div className="flex items-center gap-1">
+            {/* Get Quote Button */}
+            <Link href="/contact">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="hidden sm:flex px-6 py-2 rounded-full bg-accent text-primary-dark text-sm font-semibold hover:bg-accent/90 transition-colors whitespace-nowrap shadow-md cursor-pointer"
+              >
+                Get Quote
+              </motion.div>
+            </Link>
+
+            {/* Theme Toggle — hidden for now */}
+
+            {/* Mobile Menu Button */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded-full transition-colors hover:bg-primary/10"
+              aria-label="Toggle menu"
             >
-              Get Quote
-            </motion.div>
-          </Link>
-
-          {/* Theme Toggle */}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={toggleTheme}
-            className="p-2 rounded-full transition-colors hover:bg-primary/10"
-            aria-label="Toggle theme"
-          >
-            <AnimatePresence mode="wait">
-              {theme === "light" ? (
-                <motion.div
-                  key="moon"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Moon className={`w-5 h-5 text-foreground`} />
-                </motion.div>
+              {mobileMenuOpen ? (
+                <X className={`w-5 h-5 text-foreground`} />
               ) : (
-                <motion.div
-                  key="sun"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Sun className={`w-5 h-5 text-foreground`} />
-                </motion.div>
+                <Menu className={`w-5 h-5 text-foreground`} />
               )}
-            </AnimatePresence>
-          </motion.button>
-
-          {/* Mobile Menu Button */}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-full transition-colors hover:bg-primary/10"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <X className={`w-5 h-5 text-foreground`} />
-            ) : (
-              <Menu className={`w-5 h-5 text-foreground`} />
-            )}
-          </motion.button>
+            </motion.button>
+          </div>
         </div>
       </motion.nav>
 
