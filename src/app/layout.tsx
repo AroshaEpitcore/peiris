@@ -16,26 +16,129 @@ const bricolage = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "Peiris Cleaning Solution | Professional Cleaning Services",
-  description:
-    "Professional cleaning services by Peiris Cleaning Solution. We deliver spotless results for homes, offices, and commercial spaces. Get a free quote today.",
-  keywords: [
-    "cleaning services",
-    "professional cleaning",
-    "home cleaning",
-    "office cleaning",
-    "commercial cleaning",
-    "deep cleaning",
-    "cleaning services London",
-  ],
-  authors: [{ name: "Peiris Cleaning Solution" }],
-  openGraph: {
-    title: "Peiris Cleaning Solution | Professional Cleaning Services",
-    description:
-      "Professional cleaning services by Peiris Cleaning Solution. Spotless results guaranteed.",
-    type: "website",
-    locale: "en_US",
+  metadataBase: new URL("https://www.peiriscleaningsolutions.co.uk"),
+  title: {
+    default: "Peiris Cleaning Solutions | Professional Cleaning Services in London",
+    template: "%s | Peiris Cleaning Solutions London",
   },
+  description:
+    "Peiris Cleaning Solutions offers professional domestic, deep, end of tenancy, and office cleaning services across London. Trusted, affordable & eco-friendly. Call 07903 599828 for a free quote.",
+  keywords: [
+    "cleaning services London",
+    "domestic cleaning London",
+    "deep cleaning London",
+    "end of tenancy cleaning London",
+    "office cleaning London",
+    "house cleaning London",
+    "professional cleaners London",
+    "eco-friendly cleaning London",
+    "reliable cleaning services London",
+    "affordable cleaning London",
+    "Peiris Cleaning Solutions",
+    "London cleaning company",
+    "local cleaners London",
+    "commercial cleaning London",
+  ],
+  authors: [{ name: "Peiris Cleaning Solutions" }],
+  creator: "Peiris Cleaning Solutions",
+  publisher: "Peiris Cleaning Solutions",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    url: "https://www.peiriscleaningsolutions.co.uk",
+    siteName: "Peiris Cleaning Solutions",
+    title: "Peiris Cleaning Solutions | Professional Cleaning Services in London",
+    description:
+      "Professional domestic, deep, end of tenancy & office cleaning services across London. Eco-friendly products. Call 07903 599828 for a free quote.",
+    images: [
+      {
+        url: "/images/herobanner.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Peiris Cleaning Solutions - Professional Cleaning Services in London",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Peiris Cleaning Solutions | Professional Cleaning Services in London",
+    description:
+      "Professional cleaning services in London. Domestic, deep, end of tenancy & office cleaning. Free quotes. Call 07903 599828.",
+    images: ["/images/herobanner.jpg"],
+  },
+  alternates: {
+    canonical: "https://www.peiriscleaningsolutions.co.uk",
+  },
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Peiris Cleaning Solutions",
+  description:
+    "Professional domestic, deep, end of tenancy, and office cleaning services across London. Eco-friendly products and trained staff.",
+  url: "https://www.peiriscleaningsolutions.co.uk",
+  telephone: "+447903599828",
+  email: "Info@peiriscleaningsolutions.co.uk",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "London",
+    addressRegion: "Greater London",
+    addressCountry: "GB",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 51.5074,
+    longitude: -0.1278,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "16:00",
+    },
+  ],
+  priceRange: "££",
+  areaServed: {
+    "@type": "City",
+    name: "London",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Cleaning Services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Domestic Cleaning" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Deep Cleaning" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "End of Tenancy Cleaning" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Office Cleaning" } },
+    ],
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "500",
+  },
+  sameAs: [
+    "https://wa.me/447903599828",
+  ],
 };
 
 export default function RootLayout({
@@ -44,10 +147,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${bricolage.variable} antialiased`}
-      >
+    <html lang="en-GB" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </head>
+      <body className={`${inter.variable} ${bricolage.variable} antialiased`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
