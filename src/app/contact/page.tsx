@@ -16,7 +16,7 @@ export default function ContactPage() {
         title="Contact"
         highlight="& Get a Quote"
         description="Ready for a spotless space? Reach out to Peiris Cleaning Solution for a free consultation."
-        backgroundImage="https://iili.io/fiMUezG.jpg"
+        backgroundImage="/images/herobanner3.jpg"
       />
       <Contact />
       <NeedClean />

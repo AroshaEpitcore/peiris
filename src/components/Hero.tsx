@@ -1,14 +1,33 @@
 "use client";
 
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { ChevronDown, Shield, Star, Users, Phone } from "lucide-react";
 
+const bubbleConfigs = [...Array(6)].map(() => ({
+  x: Math.random() * 100,
+  scale: 0.5 + Math.random() * 0.5,
+  driftX: Math.random() * 200 - 100,
+  duration: 15 + Math.random() * 10,
+  delay: Math.random() * 5,
+  left: Math.random() * 100,
+  size: 20 + Math.random() * 30,
+}));
+
 const heroImages = [
-  "https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo2/wp-content/uploads/sites/6/2021/08/slide-1.jpg",
-  "https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo2/wp-content/uploads/sites/6/2021/08/slide-2.jpg",
-  "https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo2/wp-content/uploads/sites/6/2025/06/slide-3.jpg",
+  "/images/herobanner.jpg",
+  "/images/herobanner2.jpg",
+  "/images/herobanner3.jpg",
+];
+
+const mobileHeroImages = [
+  "/images/mobilehero1.jpg",
+  "/images/mobilehero2.jpg",
+  "/images/mobilehero3.jpg",
+  "/images/mobilehero4.jpg",
+  "/images/mobilehero5.jpg",
+  "/images/mobilehero6.jpg",
 ];
 
 export default function Hero() {
@@ -16,21 +35,33 @@ export default function Hero() {
   const parallaxRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const images = isMobile ? mobileHeroImages : heroImages;
 
   useEffect(() => {
     setMounted(true);
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
   }, []);
+
+  // Reset index when switching between mobile/desktop image sets
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [isMobile]);
 
   // Auto-advance slideshow
   useEffect(() => {
     if (!mounted) return;
 
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
     }, 6000);
 
     return () => clearInterval(interval);
-  }, [mounted]);
+  }, [mounted, images.length]);
 
   useEffect(() => {
     if (!mounted) return;
@@ -95,7 +126,7 @@ export default function Hero() {
             }}
             className="absolute inset-0"
             style={{
-              backgroundImage: `url('${heroImages[currentImageIndex]}')`,
+              backgroundImage: `url('${images[currentImageIndex]}')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -109,29 +140,22 @@ export default function Hero() {
       {/* Floating Bubbles Animation */}
       {mounted && (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(6)].map((_, i) => (
+          {bubbleConfigs.map((b, i) => (
             <motion.div
               key={i}
               className="absolute rounded-full bg-white/10"
-              initial={{
-                x: Math.random() * window.innerWidth,
-                y: window.innerHeight + 50,
-                scale: 0.5 + Math.random() * 0.5,
-              }}
-              animate={{
-                y: -100,
-                x: `+=${Math.random() * 200 - 100}`,
-              }}
+              initial={{ x: `${b.x}%`, y: "110vh", scale: b.scale }}
+              animate={{ y: -100, x: `+=${b.driftX}` }}
               transition={{
-                duration: 15 + Math.random() * 10,
+                duration: b.duration,
                 repeat: Infinity,
-                delay: Math.random() * 5,
+                delay: b.delay,
                 ease: "linear",
               }}
               style={{
-                left: `${Math.random() * 100}%`,
-                width: `${20 + Math.random() * 30}px`,
-                height: `${20 + Math.random() * 30}px`,
+                left: `${b.left}%`,
+                width: `${b.size}px`,
+                height: `${b.size}px`,
               }}
             />
           ))}
@@ -208,7 +232,7 @@ export default function Hero() {
 
       {/* Image Indicators */}
       <div className="absolute bottom-28 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-        {heroImages.map((_, index) => (
+        {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentImageIndex(index)}

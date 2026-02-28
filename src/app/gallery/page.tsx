@@ -16,7 +16,7 @@ export default function GalleryPage() {
         title="Our"
         highlight="Gallery"
         description="See the results of our professional cleaning services and the spaces we've transformed."
-        backgroundImage="https://iili.io/fiMUWgI.jpg"
+        backgroundImage="/images/herobanner2.jpg"
       />
       <Gallery />
       <NeedClean />

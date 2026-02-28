@@ -142,14 +142,14 @@ export default function About() {
               >
                 <div className="rounded-2xl overflow-hidden shadow-lg h-48">
                   <img
-                    src="https://iili.io/fiMUhJt.jpg"
+                    src="/images/deep-cleaning.jpg"
                     alt="Professional cleaning team"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-lg h-64">
                   <img
-                    src="https://iili.io/fiM4hdB.jpg"
+                    src="/images/domestic.jpg"
                     alt="Clean office space"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
@@ -161,14 +161,14 @@ export default function About() {
               >
                 <div className="rounded-2xl overflow-hidden shadow-lg h-64">
                   <img
-                    src="https://iili.io/fiMkV9a.jpg"
+                    src="/images/end-of-tenancy-cleaning.jpg"
                     alt="Spotless home"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-lg h-48">
                   <img
-                    src="https://iili.io/fiMUWgI.jpg"
+                    src="/images/Office Cleaning.jpg"
                     alt="Cleaning equipment"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />

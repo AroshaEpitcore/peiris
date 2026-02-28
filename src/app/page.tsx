@@ -27,7 +27,7 @@ export default function Home() {
       <MarqueeSection />
       <ExpandImg />
       <Amenities />
-      <Location />
+      {/* <Location /> */}
       <Contact />
       <NeedClean />
       <Footer />

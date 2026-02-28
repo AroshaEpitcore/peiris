@@ -16,7 +16,7 @@ export default function PageBanner({
   title,
   highlight,
   description,
-  backgroundImage = "https://iili.io/fiMUhJt.jpg",
+  backgroundImage = "/images/herobanner.jpg",
 }: PageBannerProps) {
   return (
     <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">

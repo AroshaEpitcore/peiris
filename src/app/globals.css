@@ -565,6 +565,19 @@ button {
 }
 
 /* ============================================
+   CAROUSEL
+   ============================================ */
+
+.carousel-track {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================
    MARQUEE SECTION
    ============================================ */
 

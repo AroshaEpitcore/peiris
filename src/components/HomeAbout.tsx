@@ -149,36 +149,32 @@ export default function HomeAbout() {
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="relative hidden lg:flex items-center justify-center mt-[60px]"
+            className="relative flex items-center justify-center mt-10 lg:mt-[60px]"
           >
             {/* Main image */}
             <img
-              src="https://up2client.com/envato/home-rakshak/cleaning/html/assets/images/about/about-img1.jpg"
-              alt="Professional cleaning"
-              className="w-full max-w-md"
-            />
-
-            {/* Decorative Subtract shape */}
-            <img
-              src="https://up2client.com/envato/home-rakshak/cleaning/html/assets/images/about/Subtract.png"
-              alt=""
-              className="absolute inset-0 w-full max-w-md pointer-events-none"
-              style={{ position: "absolute" }}
+              src="/images/withbg.jpeg"
+              alt="Peiris Cleaning Solutions"
+              className="w-full max-w-md rounded-full"
             />
 
             {/* Circular floating image 2 — top */}
-            <img
-              src="https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo2/wp-content/uploads/sites/6/2021/08/slide-2.jpg"
-              alt="Cleaning team"
-              className="about-img2"
-            />
+            <div className="hidden lg:block">
+              <img
+                src="/images/domestic.jpg"
+                alt="Domestic cleaning"
+                className="about-img2"
+              />
+            </div>
 
             {/* Circular floating image 3 — bottom */}
-            <img
-              src="https://moplean.ustatic.designtocodes.com/assets/images/choose_us_image.jpg"
-              alt="Clean home"
-              className="about-img3"
-            />
+            <div className="hidden lg:block">
+              <img
+                src="/images/deep-cleaning.jpg"
+                alt="Deep cleaning"
+                className="about-img3"
+              />
+            </div>
           </motion.div>
 
         </div>

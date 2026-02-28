@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     "office cleaning",
     "commercial cleaning",
     "deep cleaning",
+    "cleaning services London",
   ],
   authors: [{ name: "Peiris Cleaning Solution" }],
   openGraph: {

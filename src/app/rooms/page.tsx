@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import PageBanner from "@/components/PageBanner";
@@ -9,109 +9,104 @@ import NeedClean from "@/components/NeedClean";
 import ExpandImg from "@/components/ExpandImg";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import { Clock, Home, Building2, Check, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Check, ArrowRight, ChevronLeft, ChevronRight, Home, Building2 } from "lucide-react";
 
 const services = [
   {
-    id: "residential-cleaning",
-    name: "Residential Cleaning",
+    id: "domestic-cleaning",
+    name: "Domestic Cleaning",
     description:
-      "Regular home cleaning tailored to your needs. We handle kitchens, bathrooms, living areas, and bedrooms with care. Perfect for maintaining a consistently clean home.",
-    image: "https://iili.io/fiM4hdB.jpg",
+      "Regular or occasional cleaning to keep homes clean, tidy, and hygienic.",
+    image: "/images/domestic.jpg",
     images: [
-      "https://iili.io/fiM4hdB.jpg",
-      "https://iili.io/fiM4WgV.jpg",
-      "https://iili.io/fiMkWAJ.jpg",
+      "/images/domestic.jpg",
+      "/images/domestic2.jpg",
+      "/images/domestic3.jpg",
     ],
-    price: 99,
-    duration: "3-4 hrs",
     type: "home",
-    features: ["Kitchen Deep Clean", "Bathroom Sanitization", "Dusting & Vacuuming", "Mopping Floors", "Bed Making", "Trash Removal"],
+    features: [
+      "Dusting all surfaces",
+      "Vacuuming carpets & rugs",
+      "Mopping hard floors",
+      "Cleaning kitchen surfaces",
+      "Wiping external kitchen appliances",
+      "Cleaning sinks & taps",
+      "Bathroom cleaning (toilet, sink, bath, shower)",
+      "Emptying bins",
+    ],
+    idealFor: "Weekly, fortnightly, or monthly home cleaning.",
     popular: false,
   },
   {
     id: "deep-cleaning",
     name: "Deep Cleaning",
     description:
-      "Our thorough deep cleaning service covers every corner, removing built-up grime and leaving your space spotless. Ideal for seasonal cleaning or move-in/move-out.",
-    image: "https://iili.io/fiMUhJt.jpg",
+      "A more detailed and intensive clean than regular domestic cleaning.",
+    image: "/images/deep-cleaning.jpg",
     images: [
-      "https://iili.io/fiMUhJt.jpg",
-      "https://iili.io/fiMUWgI.jpg",
-      "https://iili.io/fiMkXwv.jpg",
+      "/images/deep-cleaning.jpg",
+      "/images/deep-cleaning2.jpg",
+      "/images/deep-cleaning3.jpg",
     ],
-    price: 249,
-    duration: "5-7 hrs",
     type: "home",
-    features: ["Behind Appliances", "Inside Cabinets", "Window Cleaning", "Grout & Tile Scrub", "Baseboard Cleaning", "Light Fixtures"],
+    features: [
+      "All domestic cleaning tasks",
+      "Deep cleaning of kitchen (inside cupboards, detailed surfaces)",
+      "Descaling taps, sinks, and shower areas",
+      "Cleaning skirting boards",
+      "Cleaning doors, frames & handles",
+      "Removing grease and built-up dirt",
+      "Extra attention to bathrooms and kitchens",
+    ],
+    idealFor: "Spring cleaning, before/after events, or when the property needs extra care.",
+    popular: true,
+  },
+  {
+    id: "end-of-tenancy-cleaning",
+    name: "End of Tenancy Cleaning",
+    description:
+      "A full clean of the property when tenants are moving in or out, meeting landlord and letting agent standards.",
+    image: "/images/end-of-tenancy-cleaning.jpg",
+    images: [
+      "/images/end-of-tenancy-cleaning.jpg",
+      "/images/end-of-tenancy-cleaning2.jpg",
+      "/images/end-of-tenancy-cleaning3.jpg",
+    ],
+    type: "home",
+    features: [
+      "Full kitchen clean (inside & outside cupboards, oven exterior)",
+      "Bathroom deep clean (toilets, showers, tiles, sinks)",
+      "Vacuuming & mopping all floors",
+      "Cleaning skirting boards",
+      "Cleaning doors, frames & handles",
+      "Internal windows (where accessible)",
+      "Removal of dust and dirt throughout the property",
+    ],
+    addOn: "Professional carpet steam cleaning (if requested)",
+    idealFor: "Tenants, landlords, and letting agents.",
     popular: true,
   },
   {
     id: "office-cleaning",
     name: "Office Cleaning",
     description:
-      "Professional commercial cleaning for offices and workspaces. Keep your business environment fresh, hygienic, and productive for your team.",
-    image: "https://iili.io/fiMkV9a.jpg",
+      "Regular or scheduled cleaning to maintain a clean and professional work environment.",
+    image: "/images/Office Cleaning.jpg",
     images: [
-      "https://iili.io/fiMkV9a.jpg",
-      "https://iili.io/fiM4we1.jpg",
-      "https://iili.io/fiM4NmF.jpg",
+      "/images/Office Cleaning.jpg",
+      "/images/Office Cleaning2.jpg",
+      "/images/Office Cleaning3.jpg",
     ],
-    price: 199,
-    duration: "4-6 hrs",
     type: "commercial",
-    features: ["Desk & Surface Sanitization", "Restroom Cleaning", "Floor Care", "Trash Removal", "Kitchen/Break Room", "Window Cleaning"],
-    popular: false,
-  },
-  {
-    id: "move-in-out-cleaning",
-    name: "Move-In/Out Cleaning",
-    description:
-      "Comprehensive cleaning for properties during tenant transitions. We ensure every surface is spotless for the next occupant or for your fresh start.",
-    image: "https://iili.io/fiM4Sqv.jpg",
-    images: [
-      "https://iili.io/fiM4Sqv.jpg",
-      "https://iili.io/fiM4U1R.jpg",
-      "https://iili.io/fiM44dN.jpg",
+    features: [
+      "Cleaning desks & work surfaces",
+      "Vacuuming carpets & mopping floors",
+      "Cleaning kitchens/break areas",
+      "Cleaning toilets & washrooms",
+      "Emptying bins",
+      "Cleaning doors, handles & touch points",
     ],
-    price: 349,
-    duration: "6-8 hrs",
-    type: "home",
-    features: ["Full Kitchen Cleaning", "Appliance Interior", "Bathroom Deep Clean", "Closet Wipe Down", "Wall Spot Cleaning", "Window Tracks"],
-    popular: true,
-  },
-  {
-    id: "post-construction-cleanup",
-    name: "Post-Construction Cleanup",
-    description:
-      "Specialized cleaning after renovations or construction. We remove dust, debris, and residue so your newly built or renovated space shines.",
-    image: "https://iili.io/fiMkG8g.jpg",
-    images: [
-      "https://iili.io/fiMkG8g.jpg",
-      "https://iili.io/fiM4Pet.jpg",
-      "https://iili.io/fiMkNMN.jpg",
-    ],
-    price: 399,
-    duration: "8-10 hrs",
-    type: "commercial",
-    features: ["Dust & Debris Removal", "Surface Polishing", "Window Cleaning", "Floor Scrubbing", "Fixture Cleaning", "Final Inspection"],
-    popular: false,
-  },
-  {
-    id: "commercial-deep-clean",
-    name: "Commercial Deep Clean",
-    description:
-      "Premium deep cleaning for retail stores, restaurants, and large commercial spaces. We use industrial-grade equipment for exceptional results.",
-    image: "https://iili.io/fiMUMfp.jpg",
-    images: [
-      "https://iili.io/fiMUMfp.jpg",
-      "https://iili.io/fiMUwen.jpg",
-      "https://iili.io/fiMUezG.jpg",
-    ],
-    price: 599,
-    duration: "10-12 hrs",
-    type: "commercial",
-    features: ["Industrial Floor Care", "High-Area Dusting", "Sanitization", "Equipment Cleaning", "Waste Management", "Quality Inspection"],
+    idealFor: "Offices, small businesses, and commercial spaces.",
     popular: false,
   },
 ];
@@ -120,14 +115,12 @@ const services = [
 function ImageCarousel({ images, serviceName }: { images: string[]; serviceName: string }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (images.length <= 1) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    }, 4000);
-
-    return () => clearInterval(interval);
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(timer);
   }, [images.length]);
 
   const goToPrevious = (e: React.MouseEvent) => {
@@ -142,26 +135,18 @@ function ImageCarousel({ images, serviceName }: { images: string[]; serviceName:
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
-  const goToSlide = (e: React.MouseEvent, index: number) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setCurrentIndex(index);
-  };
-
   return (
-    <div className="relative h-56 overflow-hidden group">
-      <AnimatePresence mode="wait">
-        <motion.img
-          key={currentIndex}
-          src={images[currentIndex]}
-          alt={`${serviceName} - Image ${currentIndex + 1}`}
-          className="w-full h-full object-cover"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
+    <div className="relative h-44 sm:h-52 md:h-56 overflow-hidden group">
+      {images.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt={`${serviceName} - Image ${i + 1}`}
+          className={`absolute inset-0 w-full h-full object-cover block transition-opacity duration-700 ${
+            i === currentIndex ? "opacity-100" : "opacity-0"
+          }`}
         />
-      </AnimatePresence>
+      ))}
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
 
@@ -189,11 +174,13 @@ function ImageCarousel({ images, serviceName }: { images: string[]; serviceName:
           {images.map((_, index) => (
             <button
               key={index}
-              onClick={(e) => goToSlide(e, index)}
-              className={`h-2 rounded-full transition-all duration-200 shadow-sm ${
-                index === currentIndex
-                  ? "bg-white w-5"
-                  : "bg-white/50 hover:bg-white/80 w-2"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setCurrentIndex(index);
+              }}
+              className={`h-1.5 rounded-full transition-all duration-200 shadow-sm ${
+                index === currentIndex ? "bg-white w-5" : "bg-white/50 hover:bg-white/80 w-1.5"
               }`}
               aria-label={`Go to image ${index + 1}`}
             />
@@ -228,9 +215,9 @@ export default function RoomsPage() {
       <PageBanner
         badge="Our Services"
         title="Our"
-        highlight="Services & Pricing"
+        highlight="Services"
         description="Choose from our range of professional cleaning services, each designed to deliver spotless results."
-        backgroundImage="https://iili.io/fiMkV9a.jpg"
+        backgroundImage="/images/herobanner.jpg"
       />
 
       <section className="bg-background">
@@ -240,13 +227,13 @@ export default function RoomsPage() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto"
           >
             {services.map((service) => (
               <motion.div
                 key={service.id}
                 variants={itemVariants}
-                whileHover={{ y: -10 }}
+                whileHover={{ y: -8 }}
                 className={`relative bg-card rounded-3xl overflow-hidden shadow-lg border-2 transition-all duration-300 ${
                   service.popular
                     ? "border-primary ring-2 ring-primary/20"
@@ -273,76 +260,53 @@ export default function RoomsPage() {
                         <Building2 className="w-5 h-5 text-white" />
                       )}
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <Clock className="w-5 h-5 text-white" />
-                    </div>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-6 md:p-8">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-bold text-foreground">
-                      {service.name}
-                    </h3>
-                    <span className="text-sm text-muted-foreground">{service.duration}</span>
-                  </div>
-                  <p className="text-muted-foreground mb-5 line-clamp-2">
-                    {service.description}
-                  </p>
+                  <h3 className="text-xl font-bold text-foreground mb-3">
+                    {service.name}
+                  </h3>
+                  <p className="text-muted-foreground mb-5">{service.description}</p>
 
-                  {/* Service Details */}
-                  <div className="flex items-center gap-5 mb-5 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4" />
-                      <span>{service.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      {service.type === "home" ? (
-                        <Home className="w-4 h-4" />
-                      ) : (
-                        <Building2 className="w-4 h-4" />
-                      )}
-                      <span className="capitalize">{service.type}</span>
-                    </div>
-                  </div>
-
-                  {/* Features Preview */}
-                  <div className="space-y-2 mb-6">
-                    {service.features.slice(0, 3).map((feature) => (
-                      <div key={feature} className="flex items-center gap-3">
-                        <Check className="w-4 h-4 text-primary" />
+                  {/* Features */}
+                  <div className="space-y-2 mb-4">
+                    {service.features.map((feature) => (
+                      <div key={feature} className="flex items-start gap-3">
+                        <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-foreground text-sm">{feature}</span>
                       </div>
                     ))}
-                    {service.features.length > 3 && (
-                      <span className="text-sm text-muted-foreground">
-                        +{service.features.length - 3} more included
-                      </span>
-                    )}
                   </div>
 
-                  {/* Price & CTA */}
-                  <div className="flex items-center justify-between pt-6 border-t border-border">
-                    <div>
-                      <span className="text-sm text-muted-foreground">From </span>
-                      <span className="text-3xl font-bold text-primary">
-                        ${service.price}
-                      </span>
+                  {/* Optional Add-on */}
+                  {"addOn" in service && (
+                    <div className="mb-4 flex items-start gap-2 text-sm bg-accent/10 border border-accent/30 rounded-xl px-3 py-2">
+                      <span className="font-semibold text-primary-dark">Optional Add-on:</span>
+                      <span className="text-muted-foreground">{(service as typeof service & { addOn: string }).addOn}</span>
                     </div>
-                    <Link href={`/rooms/${service.id}`}>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className={`btn flex items-center gap-2 ${
-                          service.popular ? "btn-primary" : "btn-secondary"
-                        }`}
-                      >
-                        View Details
-                        <ArrowRight className="w-4 h-4" />
-                      </motion.button>
-                    </Link>
+                  )}
+
+                  {/* Ideal For */}
+                  <div className="text-sm bg-muted rounded-xl px-4 py-3 mb-6">
+                    <span className="font-semibold text-foreground">Ideal for: </span>
+                    <span className="text-muted-foreground">{service.idealFor}</span>
                   </div>
+
+                  {/* CTA */}
+                  <Link href={`/rooms/${service.id}`}>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`btn w-full flex items-center gap-2 ${
+                        service.popular ? "btn-primary" : "btn-secondary"
+                      }`}
+                    >
+                      View Details
+                      <ArrowRight className="w-4 h-4" />
+                    </motion.button>
+                  </Link>
                 </div>
               </motion.div>
             ))}
@@ -356,7 +320,7 @@ export default function RoomsPage() {
             className="mt-16 text-center"
           >
             <p className="text-muted-foreground text-lg mb-4">
-              All services include eco-friendly products, professional equipment, and satisfaction guarantee
+              All services include eco-friendly products, professional equipment, and satisfaction guarantee.
             </p>
             <Link href="/contact">
               <motion.span

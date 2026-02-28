@@ -16,7 +16,7 @@ export default function LocationPage() {
         title="Our"
         highlight="Location"
         description="Conveniently located to serve homes and businesses across the Galle district and surrounding areas."
-        backgroundImage="https://iili.io/fiMUkXf.jpg"
+        backgroundImage="/images/herobanner3.jpg"
       />
       <Location />
       <NeedClean />

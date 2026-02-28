@@ -19,7 +19,7 @@ export default function AmenitiesPage() {
         title="The Peiris"
         highlight="Difference"
         description="We go above and beyond to deliver cleaning services that set the standard for quality and professionalism."
-        backgroundImage="https://iili.io/fiM4WgV.jpg"
+        backgroundImage="/images/herobanner2.jpg"
       />
       <HomeAbout />
       <ExpandImg />

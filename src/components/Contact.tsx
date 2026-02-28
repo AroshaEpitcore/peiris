@@ -65,14 +65,14 @@ export default function Contact() {
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl translate-x-1/2" />
 
-      {/* Cleaning girl image — fixed bottom right */}
+      {/* Cleaning girl image — hidden on mobile to prevent overlap */}
       <motion.img
-        src="https://html.designingmedia.com/letsclean/assets/images/home-girls-img.png"
+        src="/images/contact.png"
         alt="Cleaning professional"
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.5, duration: 0.7 }}
-        className="absolute bottom-0 right-0 h-52 object-contain z-10 pointer-events-none"
+        className="hidden lg:block absolute bottom-0 right-0 h-52 object-contain z-10 pointer-events-none"
       />
 
       <div className="container relative z-10">
@@ -104,18 +104,18 @@ export default function Contact() {
           </motion.p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           {/* Contact Methods */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            <h3 className="text-2xl font-semibold text-foreground mb-6">
+            <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4 sm:mb-6">
               Contact Us
             </h3>
 
-            <div className="space-y-5 mb-8">
+            <div className="space-y-3 sm:space-y-5 mb-6 sm:mb-8">
               {contactMethods.map((method) => (
                 <motion.a
                   key={method.title}
@@ -123,22 +123,22 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   variants={itemVariants}
-                  whileHover={{ scale: 1.02, x: 10 }}
-                  className="card !p-5 flex items-center gap-5 group"
+                  whileHover={{ scale: 1.02, x: 5 }}
+                  className="card !p-4 sm:!p-5 flex items-center gap-3 sm:gap-5 group"
                 >
                   <div
-                    className={`w-14 h-14 rounded-xl ${method.color} flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0`}
+                    className={`w-11 h-11 sm:w-14 sm:h-14 rounded-xl ${method.color} flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0`}
                   >
-                    <method.icon className="w-6 h-6 text-white" />
+                    <method.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-foreground text-lg">{method.title}</p>
-                    <p className="text-primary font-medium text-sm sm:text-base truncate">{method.value}</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="font-semibold text-foreground text-sm sm:text-lg">{method.title}</p>
+                    <p className="text-primary font-medium text-xs sm:text-sm truncate">{method.value}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">
                       {method.description}
                     </p>
                   </div>
-                  <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+                  <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
                 </motion.a>
               ))}
             </div>
@@ -178,7 +178,7 @@ export default function Contact() {
             animate={isInView ? "visible" : "hidden"}
             className="relative"
           >
-            <h3 className="text-2xl font-semibold text-foreground mb-6">
+            <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4 sm:mb-6">
               Request a Free Quote
             </h3>
 
@@ -193,8 +193,8 @@ export default function Contact() {
                 </div>
                 Send Us a Message
               </h4>
-              <form className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
+              <form className="space-y-3 sm:space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <input
                     type="text"
                     placeholder="Your Name"

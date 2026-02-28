@@ -18,7 +18,7 @@ export default function AboutPage() {
         title="About"
         highlight="Peiris Cleaning"
         description="Discover the story behind our commitment to delivering spotless, professional cleaning services."
-        backgroundImage="https://iili.io/fiM4hdB.jpg"
+        backgroundImage="/images/herobanner.jpg"
       />
        <HomeAbout />
         <ExpandImg />

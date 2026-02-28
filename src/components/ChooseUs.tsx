@@ -70,7 +70,7 @@ export default function ChooseUs() {
         <div className="grid lg:grid-cols-3 gap-10 items-center">
 
           {/* Left Features */}
-          <div className="space-y-8">
+          <div className="space-y-8 order-1 lg:order-1">
             {leftFeatures.map((feature, i) => (
               <motion.div
                 key={feature.title}
@@ -97,13 +97,13 @@ export default function ChooseUs() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="relative hidden lg:block"
+            className="relative order-3 lg:order-2"
           >
             <div className="relative overflow-hidden">
               <img
-                src="https://moplean.ustatic.designtocodes.com/assets/images/choose_us_image.jpg"
+                src="/images/withbg.jpeg"
                 alt="Professional cleaning team"
-                className="w-full block"
+                className="w-full block rounded-3xl"
                 style={{ display: "block", background: "none" }}
               />
               {/* Overlay badge */}
@@ -126,7 +126,7 @@ export default function ChooseUs() {
           </motion.div>
 
           {/* Right Features */}
-          <div className="space-y-8">
+          <div className="space-y-8 order-2 lg:order-3">
             {rightFeatures.map((feature, i) => (
               <motion.div
                 key={feature.title}

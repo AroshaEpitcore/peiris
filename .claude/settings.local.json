@@ -5,7 +5,12 @@
       "Bash(xargs:*)",
       "WebSearch",
       "WebFetch(domain:unsplash.com)",
-      "WebFetch(domain:pixydrops.com)"
+      "WebFetch(domain:pixydrops.com)",
+      "mcp__ide__getDiagnostics",
+      "WebFetch(domain:pexels.com)",
+      "WebFetch(domain:api.unsplash.com)",
+      "WebFetch(domain:www.pexels.com)",
+      "WebFetch(domain:images.unsplash.com)"
     ]
   }
 }

@@ -12,7 +12,7 @@ export default function NeedClean() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `url('https://html.designingmedia.com/cleanmax/assets/images/need-backgroundimage.jpg')`,
+          backgroundImage: `url('/images/need-backgroundimage.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
