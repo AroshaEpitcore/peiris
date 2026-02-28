@@ -68,7 +68,7 @@ export default function Contact() {
       {/* Cleaning girl image — hidden on mobile to prevent overlap */}
       <motion.img
         src="/images/contact.png"
-        alt="Cleaning professional"
+        alt="Peiris Cleaning Solutions professional cleaner ready to help in London"
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.5, duration: 0.7 }}

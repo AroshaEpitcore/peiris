@@ -37,7 +37,7 @@ export default function Navbar() {
             >
               <Image
                 src="/images/logopng.png"
-                alt="Peiris Cleaning Solutions"
+                alt="Peiris Cleaning Solutions Logo - Professional Cleaning Services London"
                 width={52}
                 height={52}
                 className="object-contain"

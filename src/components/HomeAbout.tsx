@@ -154,7 +154,7 @@ export default function HomeAbout() {
             {/* Main image */}
             <img
               src="/images/withbg.jpeg"
-              alt="Peiris Cleaning Solutions"
+              alt="Peiris Cleaning Solutions professional cleaner in London"
               className="w-full max-w-md rounded-full"
             />
 
@@ -162,7 +162,7 @@ export default function HomeAbout() {
             <div className="hidden lg:block">
               <img
                 src="/images/domestic.jpg"
-                alt="Domestic cleaning"
+                alt="Domestic home cleaning service in London"
                 className="about-img2"
               />
             </div>
@@ -171,7 +171,7 @@ export default function HomeAbout() {
             <div className="hidden lg:block">
               <img
                 src="/images/deep-cleaning.jpg"
-                alt="Deep cleaning"
+                alt="Deep cleaning service in London by Peiris Cleaning Solutions"
                 className="about-img3"
               />
             </div>

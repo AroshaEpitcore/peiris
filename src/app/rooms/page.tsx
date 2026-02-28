@@ -141,7 +141,7 @@ function ImageCarousel({ images, serviceName }: { images: string[]; serviceName:
         <img
           key={src}
           src={src}
-          alt={`${serviceName} - Image ${i + 1}`}
+          alt={`${serviceName} in London - image ${i + 1}`}
           className={`absolute inset-0 w-full h-full object-cover block transition-opacity duration-700 ${
             i === currentIndex ? "opacity-100" : "opacity-0"
           }`}

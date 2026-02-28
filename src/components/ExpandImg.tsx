@@ -4,11 +4,11 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const images = [
-  { src: "/images/person-taking-care.jpg", alt: "Professional window cleaning", cols: "col-span-2" },
-  { src: "/images/deep-cleaning.jpg",       alt: "Deep cleaning service",        cols: "col-span-1" },
-  { src: "/images/domestic.jpg",            alt: "Domestic cleaning",            cols: "col-span-1" },
-  { src: "/images/end-of-tenancy-cleaning.jpg", alt: "End of tenancy cleaning",  cols: "col-span-1" },
-  { src: "/images/Office Cleaning.jpg",     alt: "Office cleaning",              cols: "col-span-1" },
+  { src: "/images/person-taking-care.jpg", alt: "Professional cleaning service in London by Peiris Cleaning Solutions", cols: "col-span-2" },
+  { src: "/images/deep-cleaning.jpg",       alt: "Deep cleaning service results in London home",        cols: "col-span-1" },
+  { src: "/images/domestic.jpg",            alt: "Domestic cleaning service for London homes",            cols: "col-span-1" },
+  { src: "/images/end-of-tenancy-cleaning.jpg", alt: "End of tenancy cleaning in London property",  cols: "col-span-1" },
+  { src: "/images/Office Cleaning.jpg",     alt: "Professional office cleaning service in London",              cols: "col-span-1" },
 ];
 
 export default function ExpandImg() {

@@ -69,12 +69,11 @@ export default function Footer() {
             >
               <Image
                 src="/images/logopng.png"
-                alt="Peiris Cleaning Solutions"
-                width={45}
-                height={45}
+                alt="Peiris Cleaning Solutions - Professional Cleaning Services London"
+                width={100}
+                height={100}
                 className="object-contain"
               />
-              Peiris Cleaning
             </motion.a>
             <p className="text-muted-foreground mb-6 leading-relaxed text-lg">
               Domestic & Office Cleaning Services.

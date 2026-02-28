@@ -118,7 +118,7 @@ function CardImageCarousel({ images, name }: { images: string[]; name: string })
         <img
           key={src}
           src={src}
-          alt={`${name} ${i + 1}`}
+          alt={`${name} cleaning service in London - image ${i + 1}`}
           className={`absolute inset-0 w-full h-full object-cover object-center block transition-opacity duration-700 ${
             i === current ? "opacity-100" : "opacity-0"
           }`}

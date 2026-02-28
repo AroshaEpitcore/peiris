@@ -102,7 +102,7 @@ export default function ChooseUs() {
             <div className="relative overflow-hidden">
               <img
                 src="/images/withbg.jpeg"
-                alt="Professional cleaning team"
+                alt="Peiris Cleaning Solutions professional cleaner in London"
                 className="w-full block rounded-3xl"
                 style={{ display: "block", background: "none" }}
               />

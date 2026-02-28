@@ -143,14 +143,14 @@ export default function About() {
                 <div className="rounded-2xl overflow-hidden shadow-lg h-48">
                   <img
                     src="/images/deep-cleaning.jpg"
-                    alt="Professional cleaning team"
+                    alt="Professional deep cleaning service in London by Peiris Cleaning Solutions"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-lg h-64">
                   <img
                     src="/images/domestic.jpg"
-                    alt="Clean office space"
+                    alt="Domestic home cleaning service in London"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
@@ -162,14 +162,14 @@ export default function About() {
                 <div className="rounded-2xl overflow-hidden shadow-lg h-64">
                   <img
                     src="/images/end-of-tenancy-cleaning.jpg"
-                    alt="Spotless home"
+                    alt="End of tenancy cleaning service in London property"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-lg h-48">
                   <img
                     src="/images/Office Cleaning.jpg"
-                    alt="Cleaning equipment"
+                    alt="Professional office cleaning service in London"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
