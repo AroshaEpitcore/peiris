@@ -153,7 +153,7 @@ export default function Rooms() {
 
   const singleSetWidth = useRef(0);
   const initialized = useRef(false);
-  const scrollTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const scrollTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const tripled = [...services, ...services, ...services];
 
