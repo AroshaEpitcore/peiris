@@ -163,7 +163,7 @@ export default function Hero() {
       )}
 
       {/* Content */}
-      <div className="container text-center text-white relative z-10 py-20">
+      <div className="container text-center text-white relative z-10 pt-32 pb-20">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
