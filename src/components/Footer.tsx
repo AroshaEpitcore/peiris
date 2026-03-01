@@ -146,11 +146,11 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-5 text-lg">Contact Info</h3>
             <ul className="space-y-5">
-              <li className="flex items-start gap-4 text-muted-foreground">
+              <li className="flex items-start gap-4">
                 <div className="icon-box !w-10 !h-10 mt-0.5 shrink-0">
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
-                <span>No 2a Chase Cross Road,<br />Romford, RM5 3PR</span>
+                <span style={{ color: "var(--muted-foreground)" }}>No 2a Chase Cross Road,<br />Romford, RM5 3PR</span>
               </li>
               <li>
                 <a
@@ -168,8 +168,8 @@ export default function Footer() {
                   href="mailto:Info@peiriscleaningsolutions.co.uk"
                   className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <div className="icon-box !w-10 !h-10">
-                    <Mail className="w-5 h-5 text-primary" />
+                  <div className="icon-box !w-10 !h-10 shrink-0">
+                    <Mail className="text-primary" style={{ width: "20px", height: "20px", flexShrink: 0 }} />
                   </div>
                   <span className="text-sm">Info@peiriscleaningsolutions.co.uk</span>
                 </a>
