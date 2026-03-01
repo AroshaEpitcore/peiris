@@ -51,6 +51,14 @@ export default function ChooseUs() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
+      {/* Decorative image — vacuum top-right, desktop only */}
+      <img
+        src="/images/vaccumpng.png"
+        alt=""
+        aria-hidden="true"
+        className="hidden lg:block absolute right-0 top-[15%] h-[65%] max-h-[500px] object-contain pointer-events-none opacity-20 z-0"
+      />
+
       <div className="container relative z-10">
         {/* Header */}
         <div className="section-header">

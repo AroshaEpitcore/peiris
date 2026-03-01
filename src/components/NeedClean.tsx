@@ -2,12 +2,11 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function NeedClean() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-28">
+    <section id="need-clean" className="relative overflow-hidden py-20 md:py-28">
       {/* Background Image */}
       <div
         className="absolute inset-0"
@@ -48,16 +47,17 @@ export default function NeedClean() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn btn-primary inline-flex items-center gap-2 text-base px-8 py-4"
-              >
-                Request a Quote
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-            </Link>
+            <motion.a
+              href={`https://wa.me/447903599828?text=${encodeURIComponent("Hi, I came across Peiris Cleaning Solutions and I'm interested in booking a cleaning service. Could you please provide me with a free quote? I look forward to hearing from you. Thank you!")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn btn-primary inline-flex items-center gap-2 text-base px-8 py-4"
+            >
+              Send Us a Message
+              <ArrowRight className="w-5 h-5" />
+            </motion.a>
           </motion.div>
         </div>
       </div>

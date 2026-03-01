@@ -106,6 +106,14 @@ export default function Amenities() {
       {/* Background Decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
 
+      {/* Decorative image — bucket right-center, desktop only */}
+      <img
+        src="/images/wash bucket.png"
+        alt=""
+        aria-hidden="true"
+        className="hidden lg:block absolute right-0 top-[25%] h-[55%] max-h-[460px] object-contain pointer-events-none opacity-20 z-0"
+      />
+
       <div className="container relative z-10">
         {/* Section Header */}
         <div className="section-header">

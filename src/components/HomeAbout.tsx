@@ -44,6 +44,14 @@ export default function HomeAbout() {
       <div className="absolute top-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
 
+      {/* Decorative image — bucket bottom-left, desktop only */}
+      <img
+        src="/images/wash bucket.png"
+        alt=""
+        aria-hidden="true"
+        className="hidden lg:block absolute left-0 bottom-0 h-[50%] max-h-[420px] object-contain pointer-events-none opacity-20 z-0"
+      />
+
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 

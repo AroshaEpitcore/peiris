@@ -148,14 +148,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-GB" suppressHydrationWarning>
-      <head>
+      <body className={`${inter.variable} ${bricolage.variable} antialiased`}>
+        <ThemeProvider>{children}</ThemeProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
-      </head>
-      <body className={`${inter.variable} ${bricolage.variable} antialiased`}>
-        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

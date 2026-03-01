@@ -12,7 +12,7 @@ import MarqueeSection from "@/components/MarqueeSection";
 import NeedClean from "@/components/NeedClean";
 import ExpandImg from "@/components/ExpandImg";
 import Location from "@/components/Location";
-import Contact from "@/components/Contact";
+import HomeContact from "@/components/HomeContact";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -24,12 +24,12 @@ export default function Home() {
       <HomeAbout />
       <ChooseUs />
       <Rooms />
+      <NeedClean />
       <MarqueeSection />
       <ExpandImg />
       <Amenities />
       {/* <Location /> */}
-      <Contact />
-      <NeedClean />
+      <HomeContact />
       <Footer />
       <ScrollToTop />
     </main>

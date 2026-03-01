@@ -5,92 +5,81 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
 
 const images = [
-  // Exterior images
+  // Domestic / House Cleaning
   {
-    src: "https://iili.io/fiMUhJt.jpg",
-    alt: "Residential cleaning",
-    category: "residential",
+    src: "/images/galleryhouse.jpeg",
+    alt: "Domestic house cleaning service in London by Peiris Cleaning Solutions",
+    category: "domestic",
   },
   {
-    src: "https://iili.io/fiMUWgI.jpg",
-    alt: "Home deep clean",
-    category: "residential",
+    src: "/images/galleryhouse2.png",
+    alt: "Professional home cleaning in London - spotless results",
+    category: "domestic",
   },
   {
-    src: "https://iili.io/fiMkXwv.jpg",
-    alt: "Kitchen cleaning",
-    category: "residential",
+    src: "/images/galleryhouse3.png",
+    alt: "Regular domestic cleaning service London",
+    category: "domestic",
   },
   {
-    src: "https://iili.io/fiMUMfp.jpg",
-    alt: "Living area cleaning",
-    category: "residential",
+    src: "/images/galleryhouse4.png",
+    alt: "Home cleaning by Peiris Cleaning Solutions London",
+    category: "domestic",
+  },
+  // Deep Cleaning
+  {
+    src: "/images/gallerydeep.png",
+    alt: "Professional deep cleaning service in London",
+    category: "deep",
   },
   {
-    src: "https://iili.io/fiMUwen.jpg",
-    alt: "Outdoor cleaning",
-    category: "residential",
+    src: "/images/gallerydeep2.png",
+    alt: "Intensive deep clean by Peiris Cleaning Solutions London",
+    category: "deep",
+  },
+  // End of Tenancy Cleaning
+  {
+    src: "/images/galleryTenancy.png",
+    alt: "End of tenancy cleaning in London - move out clean",
+    category: "tenancy",
   },
   {
-    src: "https://iili.io/fiMUezG.jpg",
-    alt: "Patio cleaning",
-    category: "residential",
-  },
-  // Commercial images
-  {
-    src: "https://iili.io/fiM4hdB.jpg",
-    alt: "Office cleaning",
-    category: "commercial",
+    src: "/images/galleryTenancy2.png",
+    alt: "Professional end of tenancy cleaning London",
+    category: "tenancy",
   },
   {
-    src: "https://iili.io/fiM4WgV.jpg",
-    alt: "Workspace cleaning",
-    category: "commercial",
+    src: "/images/galleryTenancy3.png",
+    alt: "Move in move out cleaning service London",
+    category: "tenancy",
+  },
+  // Office Cleaning
+  {
+    src: "/images/galleryoffice.png",
+    alt: "Professional office cleaning service in London",
+    category: "office",
   },
   {
-    src: "https://iili.io/fiMkWAJ.jpg",
-    alt: "Conference room cleaning",
-    category: "commercial",
+    src: "/images/galleryoffice2.png",
+    alt: "Commercial office cleaning London by Peiris Cleaning Solutions",
+    category: "office",
   },
   {
-    src: "https://iili.io/fiMkV9a.jpg",
-    alt: "Lobby cleaning",
-    category: "commercial",
-  },
-  {
-    src: "https://iili.io/fiM4we1.jpg",
-    alt: "Break room cleaning",
-    category: "commercial",
-  },
-  {
-    src: "https://iili.io/fiM4NmF.jpg",
-    alt: "Commercial kitchen cleaning",
-    category: "commercial",
-  },
-  // Specialized images
-  {
-    src: "https://iili.io/fiM4U1R.jpg",
-    alt: "Deep cleaning service",
-    category: "specialized",
-  },
-  {
-    src: "https://iili.io/fiM4Pet.jpg",
-    alt: "Post-construction cleanup",
-    category: "specialized",
-  },
-  {
-    src: "https://iili.io/fiMkG8g.jpg",
-    alt: "Move-in/out cleaning",
-    category: "specialized",
-  },
-  {
-    src: "https://iili.io/fiMkNMN.jpg",
-    alt: "Event cleanup",
-    category: "specialized",
+    src: "/images/galleryoffice3.png",
+    alt: "Workplace cleaning service London",
+    category: "office",
   },
 ];
 
-const categories = ["all", "residential", "commercial", "specialized"];
+const categories = ["all", "domestic", "deep", "tenancy", "office"];
+
+const categoryLabels: Record<string, string> = {
+  all: "All",
+  domestic: "Domestic",
+  deep: "Deep Cleaning",
+  tenancy: "End of Tenancy",
+  office: "Office",
+};
 
 export default function Gallery() {
   const ref = useRef<HTMLDivElement>(null);
@@ -147,13 +136,13 @@ export default function Gallery() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveCategory(category)}
-              className={`btn capitalize ${
+              className={`btn ${
                 activeCategory === category
                   ? "btn-primary"
                   : "btn-outline"
               }`}
             >
-              {category}
+              {categoryLabels[category]}
             </motion.button>
           ))}
         </motion.div>
@@ -173,22 +162,14 @@ export default function Gallery() {
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 whileHover={{ scale: 1.02 }}
-                className={`relative group cursor-pointer rounded-2xl overflow-hidden shadow-lg ${
-                  index === 0 ? "md:col-span-2 md:row-span-2" : ""
-                }`}
+                className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-lg"
                 onClick={() => setSelectedImage(image.src)}
               >
-                <div
-                  className={`${
-                    index === 0 ? "h-[400px] md:h-full" : "h-[200px] md:h-[250px]"
-                  }`}
-                >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
                   <motion.div
                     initial={{ opacity: 0, scale: 0 }}

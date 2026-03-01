@@ -101,7 +101,7 @@ export default function Hero() {
   }, [mounted]);
 
   const stats = [
-    { icon: Star, value: "4.9", label: "Client Rating" },
+    { icon: Star, value: "5.0", label: "Client Rating" },
     { icon: Users, value: "500+", label: "Happy Clients" },
     { icon: Shield, value: "100%", label: "Satisfaction" },
   ];
@@ -199,7 +199,7 @@ export default function Hero() {
             07903 599828
           </motion.a>
           <motion.a
-            href="#contact"
+            href="#need-clean"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="btn bg-white/10 backdrop-blur-sm border border-white/30 font-semibold text-lg hover:bg-white/20 px-10 py-4"
