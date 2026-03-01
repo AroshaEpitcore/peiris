@@ -140,6 +140,7 @@ export default function HomeContact() {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
+            className="order-2 md:order-1"
           >
             <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4 sm:mb-6">
               Contact Us
@@ -203,7 +204,8 @@ export default function HomeContact() {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="relative"
+            id="contact-form"
+            className="relative order-1 md:order-2"
           >
             <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4 sm:mb-6">
               Request a Free Quote

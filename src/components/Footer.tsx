@@ -11,6 +11,7 @@ import {
   Mail,
   Phone,
   Heart,
+  MapPin,
 } from "lucide-react";
 
 const footerLinks = {
@@ -27,8 +28,8 @@ const footerLinks = {
     { name: "Office Cleaning", href: "#services" },
   ],
   legal: [
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" },
+    { name: "Privacy Policy", href: "/terms" },
+    { name: "Terms of Service", href: "/terms" },
   ],
 };
 
@@ -145,6 +146,12 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-5 text-lg">Contact Info</h3>
             <ul className="space-y-5">
+              <li className="flex items-start gap-4 text-muted-foreground">
+                <div className="icon-box !w-10 !h-10 mt-0.5 shrink-0">
+                  <MapPin className="w-5 h-5 text-primary" />
+                </div>
+                <span>No 2a Chase Cross Road,<br />Romford, RM5 3PR</span>
+              </li>
               <li>
                 <a
                   href="tel:07903599828"
