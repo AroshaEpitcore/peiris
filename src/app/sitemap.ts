@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/rooms`,
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
@@ -60,7 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
     ...serviceIds.map((id) => ({
-      url: `${baseUrl}/rooms/${id}`,
+      url: `${baseUrl}/services/${id}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.85,

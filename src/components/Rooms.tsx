@@ -262,7 +262,7 @@ export default function Rooms() {
               key={`${service.id}-${i}`}
               className="flex-none w-[82vw] sm:w-[320px] md:w-[360px] lg:w-[380px]"
             >
-              <Link href={`/rooms/${service.id}`} className="block h-full">
+              <Link href={`/services/${service.id}`} className="block h-full">
                 <div
                   className={`relative bg-card rounded-3xl overflow-hidden shadow-md border-2 h-full flex flex-col transition-all duration-300 ${
                     service.popular

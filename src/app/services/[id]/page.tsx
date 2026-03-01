@@ -152,7 +152,7 @@ export default function ServiceDetailPage() {
           <p className="text-muted-foreground mb-8">
             The service you&apos;re looking for doesn&apos;t exist.
           </p>
-          <Link href="/rooms">
+          <Link href="/services">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -200,7 +200,7 @@ export default function ServiceDetailPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
 
         {/* Back Button */}
-        <Link href="/rooms" className="absolute top-20 left-4 md:left-6 z-10">
+        <Link href="/services" className="absolute top-20 left-4 md:left-6 z-10">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -482,7 +482,7 @@ export default function ServiceDetailPage() {
                 .filter((s) => s.id !== service.id)
                 .slice(0, 3)
                 .map((s) => (
-                  <Link key={s.id} href={`/rooms/${s.id}`}>
+                  <Link key={s.id} href={`/services/${s.id}`}>
                     <motion.div
                       whileHover={{ y: -4 }}
                       className="bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-300 shadow-sm"

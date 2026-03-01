@@ -295,7 +295,7 @@ export default function RoomsPage() {
                   </div>
 
                   {/* CTA */}
-                  <Link href={`/rooms/${service.id}`}>
+                  <Link href={`/services/${service.id}`}>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}

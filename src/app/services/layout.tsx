@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     "house cleaning services London",
   ],
   alternates: {
-    canonical: "https://www.peiriscleaningsolutions.co.uk/rooms",
+    canonical: "https://www.peiriscleaningsolutions.co.uk/services",
   },
   openGraph: {
     title: "Cleaning Services in London | Peiris Cleaning Solutions",
     description:
       "Domestic, deep, end of tenancy & office cleaning in London. All services include eco-friendly products, professional equipment & satisfaction guarantee.",
-    url: "https://www.peiriscleaningsolutions.co.uk/rooms",
+    url: "https://www.peiriscleaningsolutions.co.uk/services",
   },
 };
 

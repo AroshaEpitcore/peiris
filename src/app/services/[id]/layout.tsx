@@ -75,12 +75,12 @@ export async function generateMetadata({
     description: meta.description,
     keywords: meta.keywords,
     alternates: {
-      canonical: `https://www.peiriscleaningsolutions.co.uk/rooms/${id}`,
+      canonical: `https://www.peiriscleaningsolutions.co.uk/services/${id}`,
     },
     openGraph: {
       title: `${meta.title} | Peiris Cleaning Solutions`,
       description: meta.description,
-      url: `https://www.peiriscleaningsolutions.co.uk/rooms/${id}`,
+      url: `https://www.peiriscleaningsolutions.co.uk/services/${id}`,
     },
   };
 }
