@@ -234,7 +234,7 @@ export default function RoomsPage() {
                 key={service.id}
                 variants={itemVariants}
                 whileHover={{ y: -8 }}
-                className={`relative bg-card rounded-3xl overflow-hidden shadow-lg border-2 transition-all duration-300 ${
+                className={`relative bg-card rounded-3xl overflow-hidden shadow-lg border-2 transition-all duration-300 flex flex-col ${
                   service.popular
                     ? "border-primary ring-2 ring-primary/20"
                     : "border-border hover:border-primary/30"
@@ -264,7 +264,7 @@ export default function RoomsPage() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 md:p-8">
+                <div className="p-6 md:p-8 flex flex-col flex-1">
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {service.name}
                   </h3>
@@ -295,7 +295,7 @@ export default function RoomsPage() {
                   </div>
 
                   {/* CTA */}
-                  <Link href={`/services/${service.id}`}>
+                  <Link href={`/services/${service.id}`} className="mt-auto">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
