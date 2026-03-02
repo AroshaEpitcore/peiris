@@ -93,7 +93,14 @@ export default function Gallery() {
       : images.filter((img) => img.category === activeCategory);
 
   return (
-    <section id="gallery" ref={ref} className="bg-muted leaf-pattern relative">
+    <section id="gallery" ref={ref} className="bg-muted leaf-pattern relative overflow-hidden">
+      {/* Decorative image — sideimage1 right, desktop only */}
+      <img
+        src="/images/sideimage1.png"
+        alt=""
+        aria-hidden="true"
+        className="hidden lg:block absolute right-0 bottom-[10%] h-[50%] max-h-[420px] object-contain pointer-events-none opacity-15 z-0"
+      />
       <div className="container">
         {/* Section Header */}
         <div className="section-header">

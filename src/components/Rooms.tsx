@@ -209,7 +209,14 @@ export default function Rooms() {
   }, []);
 
   return (
-    <section id="services" ref={sectionRef} className="bg-background relative">
+    <section id="services" ref={sectionRef} className="bg-background relative overflow-hidden">
+      {/* Decorative image — sideimage1 left, desktop only */}
+      <img
+        src="/images/sideimage1.png"
+        alt=""
+        aria-hidden="true"
+        className="hidden lg:block absolute left-0 top-[20%] h-[60%] max-h-[480px] object-contain pointer-events-none opacity-20 z-0"
+      />
       {/* Section Header */}
       <div className="container">
         <div className="section-header">

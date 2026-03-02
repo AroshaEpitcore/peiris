@@ -115,6 +115,13 @@ export default function HomeContact() {
       {/* Background Decoration */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl translate-x-1/2" />
+      {/* Decorative image — sideimage2 left, desktop only */}
+      <img
+        src="/images/sideimage2.png"
+        alt=""
+        aria-hidden="true"
+        className="hidden lg:block absolute left-0 top-[20%] h-[60%] max-h-[460px] object-contain pointer-events-none opacity-20 z-0"
+      />
 
       {/* Cleaning girl image */}
       <motion.img
