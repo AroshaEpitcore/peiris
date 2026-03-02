@@ -50,20 +50,41 @@ export default function HomeContact() {
     message: "",
   });
 
+  const [errors, setErrors] = useState<Partial<typeof form>>({});
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (errors[name as keyof typeof form]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
+
+  const validate = (): boolean => {
+    const newErrors: Partial<typeof form> = {};
+    if (!form.name.trim()) newErrors.name = "Full name is required.";
+    if (!form.email.trim()) {
+      newErrors.email = "Email address is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+    if (!form.phone.trim()) newErrors.phone = "Phone number is required.";
+    if (!form.service) newErrors.service = "Please select a service.";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleWhatsApp = () => {
+    if (!validate()) return;
     const lines = [
       `Hi, I'd like to request a free cleaning quote.`,
       ``,
-      `Name: ${form.name || "—"}`,
-      `Email: ${form.email || "—"}`,
-      `Phone: ${form.phone || "—"}`,
-      `Service: ${form.service || "—"}`,
+      `Name: ${form.name}`,
+      `Email: ${form.email}`,
+      `Phone: ${form.phone}`,
+      `Service: ${form.service}`,
       `Message: ${form.message || "—"}`,
     ];
     window.open(
@@ -212,46 +233,58 @@ export default function HomeContact() {
               </h4>
               <form className="space-y-3 sm:space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  <input
-                    name="name"
-                    type="text"
-                    placeholder="Your Name"
-                    className="input"
-                    value={form.name}
-                    onChange={handleChange}
-                  />
-                  <input
-                    name="email"
-                    type="email"
-                    placeholder="Email Address"
-                    className="input"
-                    value={form.email}
-                    onChange={handleChange}
-                  />
+                  <div>
+                    <input
+                      name="name"
+                      type="text"
+                      placeholder="Your Name *"
+                      className={`input ${errors.name ? "border-red-500" : ""}`}
+                      value={form.name}
+                      onChange={handleChange}
+                    />
+                    {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+                  </div>
+                  <div>
+                    <input
+                      name="email"
+                      type="email"
+                      placeholder="Email Address *"
+                      className={`input ${errors.email ? "border-red-500" : ""}`}
+                      value={form.email}
+                      onChange={handleChange}
+                    />
+                    {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                  </div>
                 </div>
-                <input
-                  name="phone"
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="input"
-                  value={form.phone}
-                  onChange={handleChange}
-                />
-                <select
-                  name="service"
-                  className="input"
-                  value={form.service}
-                  onChange={handleChange}
-                >
-                  <option value="">Select a Service</option>
-                  <option value="Regular Home Cleaning">Regular Home Cleaning</option>
-                  <option value="Deep Cleaning">Deep Cleaning</option>
-                  <option value="End of Tenancy Cleaning">End of Tenancy Cleaning</option>
-                  <option value="Office & Commercial Cleaning">Office & Commercial Cleaning</option>
-                </select>
+                <div>
+                  <input
+                    name="phone"
+                    type="tel"
+                    placeholder="Phone Number *"
+                    className={`input ${errors.phone ? "border-red-500" : ""}`}
+                    value={form.phone}
+                    onChange={handleChange}
+                  />
+                  {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+                </div>
+                <div>
+                  <select
+                    name="service"
+                    className={`input ${errors.service ? "border-red-500" : ""}`}
+                    value={form.service}
+                    onChange={handleChange}
+                  >
+                    <option value="">Select a Service *</option>
+                    <option value="Regular Home Cleaning">Regular Home Cleaning</option>
+                    <option value="Deep Cleaning">Deep Cleaning</option>
+                    <option value="End of Tenancy Cleaning">End of Tenancy Cleaning</option>
+                    <option value="Office & Commercial Cleaning">Office & Commercial Cleaning</option>
+                  </select>
+                  {errors.service && <p className="text-red-500 text-xs mt-1">{errors.service}</p>}
+                </div>
                 <textarea
                   name="message"
-                  placeholder="Tell us about your cleaning needs..."
+                  placeholder="Tell us about your cleaning needs... (optional)"
                   rows={4}
                   className="input resize-none"
                   value={form.message}
