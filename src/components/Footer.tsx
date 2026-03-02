@@ -40,6 +40,18 @@ const socialLinks = [
   { icon: MessageCircle, href: "https://wa.me/447903599828", label: "WhatsApp" },
 ];
 
+const iconBoxStyle: React.CSSProperties = {
+  width: "40px",
+  height: "40px",
+  minWidth: "40px",
+  borderRadius: "0.75rem",
+  background: "rgba(255,255,255,0.12)",
+  border: "1px solid rgba(255,255,255,0.18)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -53,20 +65,30 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="relative overflow-hidden">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('/images/footer-background.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+        }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 z-0" style={{ background: "rgba(10, 22, 40, 0.93)" }} />
+
       {/* Main Footer */}
-      <div className="container py-16">
+      <div className="container py-16 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
           {/* Brand */}
           <div className="lg:col-span-1">
             <motion.a
               href="#home"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick("#home");
-              }}
+              onClick={(e) => { e.preventDefault(); handleNavClick("#home"); }}
               whileHover={{ scale: 1.02 }}
-              className="flex items-center gap-3 text-primary font-bold text-2xl mb-5"
+              className="flex items-center gap-3 font-bold text-2xl mb-5"
             >
               <Image
                 src="/images/logopng.png"
@@ -76,7 +98,7 @@ export default function Footer() {
                 className="object-contain"
               />
             </motion.a>
-            <p className="text-muted-foreground mb-6 leading-relaxed text-lg">
+            <p className="mb-6 leading-relaxed text-lg" style={{ color: "rgba(255,255,255,0.65)" }}>
               Domestic & Office Cleaning Services.
               Trustworthy, Professional, Affordable & Local.
             </p>
@@ -89,7 +111,10 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -3 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                  className="w-11 h-11 rounded-full flex items-center justify-center transition-colors"
+                  style={{ background: "rgba(255,255,255,0.12)", color: "white" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--primary)"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.12)"; }}
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -100,18 +125,18 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-5 text-lg">Quick Links</h3>
+            <h3 className="font-semibold text-white mb-5 text-lg">Quick Links</h3>
             <ul className="space-y-4">
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.name}>
                   <motion.a
                     href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(link.href);
-                    }}
+                    onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
                     whileHover={{ x: 5 }}
-                    className="text-muted-foreground hover:text-primary transition-colors inline-block text-lg"
+                    className="inline-block text-lg transition-colors"
+                    style={{ color: "rgba(255,255,255,0.65)" }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "white"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.65)"; }}
                   >
                     {link.name}
                   </motion.a>
@@ -122,18 +147,18 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-foreground mb-5 text-lg">Our Services</h3>
+            <h3 className="font-semibold text-white mb-5 text-lg">Our Services</h3>
             <ul className="space-y-4">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <motion.a
                     href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(link.href);
-                    }}
+                    onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
                     whileHover={{ x: 5 }}
-                    className="text-muted-foreground hover:text-primary transition-colors inline-block text-lg"
+                    className="inline-block text-lg transition-colors"
+                    style={{ color: "rgba(255,255,255,0.65)" }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "white"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.65)"; }}
                   >
                     {link.name}
                   </motion.a>
@@ -144,21 +169,26 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-foreground mb-5 text-lg">Contact Info</h3>
+            <h3 className="font-semibold text-white mb-5 text-lg">Contact Info</h3>
             <ul className="space-y-5">
               <li className="flex items-start gap-4">
-                <div className="icon-box !w-10 !h-10 mt-0.5 shrink-0">
-                  <MapPin className="w-5 h-5 text-primary" />
+                <div style={iconBoxStyle} className="mt-0.5">
+                  <MapPin className="w-5 h-5 text-white" />
                 </div>
-                <span style={{ color: "var(--muted-foreground)" }}>No 2a Chase Cross Road,<br />Romford, RM5 3PR</span>
+                <span style={{ color: "rgba(255,255,255,0.65)" }}>
+                  No 2a Chase Cross Road,<br />Romford, RM5 3PR
+                </span>
               </li>
               <li>
                 <a
                   href="tel:07903599828"
-                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-4 transition-colors group"
+                  style={{ color: "rgba(255,255,255,0.65)" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "white"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.65)"; }}
                 >
-                  <div className="icon-box !w-10 !h-10">
-                    <Phone className="w-5 h-5 text-primary" />
+                  <div style={iconBoxStyle}>
+                    <Phone className="w-5 h-5 text-white" />
                   </div>
                   <span>07903 599828</span>
                 </a>
@@ -166,10 +196,13 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:Info@peiriscleaningsolutions.co.uk"
-                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-4 transition-colors"
+                  style={{ color: "rgba(255,255,255,0.65)" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "white"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.65)"; }}
                 >
-                  <div className="icon-box !w-10 !h-10 shrink-0">
-                    <Mail className="text-primary" style={{ width: "20px", height: "20px", flexShrink: 0 }} />
+                  <div style={iconBoxStyle}>
+                    <Mail style={{ width: "20px", height: "20px", color: "white" }} />
                   </div>
                   <span className="text-sm">Info@peiriscleaningsolutions.co.uk</span>
                 </a>
@@ -179,10 +212,13 @@ export default function Footer() {
                   href="https://wa.me/447903599828"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-4 transition-colors"
+                  style={{ color: "rgba(255,255,255,0.65)" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "white"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.65)"; }}
                 >
-                  <div className="icon-box !w-10 !h-10">
-                    <MessageCircle className="w-5 h-5 text-primary" />
+                  <div style={iconBoxStyle}>
+                    <MessageCircle className="w-5 h-5 text-white" />
                   </div>
                   <span>WhatsApp Us</span>
                 </a>
@@ -193,15 +229,15 @@ export default function Footer() {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-border">
+      <div className="relative z-10" style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}>
         <div className="container py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-muted-foreground text-center md:text-left">
+            <p className="text-center md:text-left" style={{ color: "rgba(255,255,255,0.5)" }}>
               &copy; {currentYear} Peiris Cleaning Solutions. All rights reserved.
             </p>
-            <div className="flex items-center gap-1 text-muted-foreground">
+            <div className="flex items-center gap-1" style={{ color: "rgba(255,255,255,0.5)" }}>
               Made with{" "}
-              <Heart className="w-4 h-4 text-red-500 fill-red-500 mx-1" /> for
+              <Heart className="w-4 h-4 text-red-400 fill-red-400 mx-1" /> for
               cleaner spaces
             </div>
             <div className="flex gap-6">
@@ -209,7 +245,10 @@ export default function Footer() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="transition-colors"
+                  style={{ color: "rgba(255,255,255,0.5)" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "white"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.5)"; }}
                 >
                   {link.name}
                 </a>

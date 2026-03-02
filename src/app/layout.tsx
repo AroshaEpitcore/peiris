@@ -146,6 +146,19 @@ export default function RootLayout({
   return (
     <html lang="en-GB" suppressHydrationWarning>
       <body className={`${inter.variable} ${bricolage.variable} antialiased`}>
+        {/* Fixed decorative side images — desktop only */}
+        <img
+          src="/images/sideimage1.png"
+          alt=""
+          aria-hidden="true"
+          className="hidden xl:block fixed left-0 top-[30%] h-64 object-contain pointer-events-none opacity-20 z-[1]"
+        />
+        <img
+          src="/images/sideimage2.png"
+          alt=""
+          aria-hidden="true"
+          className="hidden xl:block fixed right-0 top-[55%] h-64 object-contain pointer-events-none opacity-20 z-[1]"
+        />
         <ThemeProvider>{children}</ThemeProvider>
         <script
           type="application/ld+json"
