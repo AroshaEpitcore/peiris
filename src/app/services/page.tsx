@@ -10,6 +10,34 @@ import ExpandImg from "@/components/ExpandImg";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Check, ArrowRight, ChevronLeft, ChevronRight, Home, Building2 } from "lucide-react";
+import FAQ from "@/components/FAQ";
+
+const servicesFAQs = [
+  {
+    question: "What's the difference between a regular clean and a deep clean?",
+    answer: "A regular clean covers routine maintenance — vacuuming, mopping, wiping surfaces, and bathrooms. A deep clean is a thorough top-to-bottom clean that tackles built-up grime, inside appliances, behind furniture, grout, and areas often missed in standard cleans.",
+  },
+  {
+    question: "How long does an end of tenancy clean take?",
+    answer: "This depends on the size of the property. A 1-bedroom flat typically takes 3–4 hours, while a 3-bedroom house may take 6–8 hours. We work until the property meets the required standard.",
+  },
+  {
+    question: "Will end of tenancy cleaning help me get my deposit back?",
+    answer: "Yes — our end of tenancy cleaning is specifically designed to meet letting agency and landlord standards. We follow a comprehensive checklist to ensure the property is returned to its original condition.",
+  },
+  {
+    question: "Can you clean our office outside business hours?",
+    answer: "Absolutely. We offer flexible scheduling for commercial clients, including early mornings, evenings, and weekends, so your business is never disrupted.",
+  },
+  {
+    question: "How often should I book a domestic clean?",
+    answer: "Most of our home clients opt for weekly or fortnightly cleans. However, we're fully flexible — you can book monthly, or as a one-off whenever you need it.",
+  },
+  {
+    question: "Do you provide specialist cleaning equipment?",
+    answer: "Yes. We bring all necessary professional-grade equipment and eco-friendly products. For specialist tasks like carpet shampooing or steam cleaning, just mention it when booking and we'll arrange accordingly.",
+  },
+];
 
 const services = [
   {
@@ -336,6 +364,14 @@ export default function RoomsPage() {
         </div>
       </section>
 
+      <FAQ
+        faqs={servicesFAQs}
+        badge="Services FAQ"
+        title="Common Service"
+        titleHighlight="Questions"
+        description="Everything you need to know about our cleaning services before you book."
+        bg="bg-muted/40"
+      />
       <ExpandImg />
       <NeedClean />
       <Footer />
