@@ -11,7 +11,6 @@ import Amenities from "@/components/Amenities";
 import MarqueeSection from "@/components/MarqueeSection";
 import NeedClean from "@/components/NeedClean";
 import ExpandImg from "@/components/ExpandImg";
-import Location from "@/components/Location";
 import HomeContact from "@/components/HomeContact";
 import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
@@ -58,7 +57,6 @@ export default function Home() {
       <ExpandImg />
       <MarqueeSection />
       <Amenities />
-      {/* <Location /> */}
       <FAQ
         faqs={homeFAQs}
         badge="FAQ"
