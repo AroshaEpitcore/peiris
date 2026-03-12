@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Privacy & Refund Policy",
+  title: "Terms & Conditions | Peiris Cleaning Solutions",
   description:
-    "Read the Terms & Conditions, Privacy Policy, and Refund Policy of Peiris Cleaning Solutions Ltd. Professional cleaning services in London.",
+    "Read the Terms & Conditions of Peiris Cleaning Solutions Ltd. Professional cleaning services in Romford, London.",
   alternates: {
     canonical: "https://www.peiriscleaningsolutions.co.uk/terms",
   },

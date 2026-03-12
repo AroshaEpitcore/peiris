@@ -28,7 +28,7 @@ const footerLinks = {
     { name: "Office Cleaning", href: "#services" },
   ],
   legal: [
-    { name: "Privacy Policy", href: "/terms" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Terms of Service", href: "/terms" },
   ],
 };

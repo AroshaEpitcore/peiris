@@ -17,7 +17,7 @@ const sections = [
       },
       {
         heading: "2. Services",
-        body: "Peiris Cleaning Solutions Ltd. provides professional cleaning services including, but not limited to, office cleaning, end of tenancy cleaning, deep cleaning, and regular cleaning. Services will be delivered in accordance with the agreed scope at the time of booking.",
+        body: "Peiris Cleaning Solutions Ltd. provides professional cleaning services including, but not limited to, office cleaning, end of tenancy cleaning, deep cleaning, and regular domestic cleaning. Services will be delivered in accordance with the agreed scope at the time of booking.",
       },
       {
         heading: "3. Bookings and Payments",
@@ -25,6 +25,7 @@ const sections = [
           "All bookings must be confirmed in advance.",
           "Payment is due upon completion of the service unless otherwise agreed in writing.",
           "We reserve the right to suspend or cancel services in the event of non-payment.",
+          "Prices quoted are based on the information provided at the time of booking. Additional charges may apply if the actual scope of work exceeds the original description.",
         ],
       },
       {
@@ -32,6 +33,7 @@ const sections = [
         bullets: [
           "Clients must provide at least 24 hours' notice for cancellations or rescheduling.",
           "Cancellations made with less than 24 hours' notice may be subject to a cancellation fee of up to 50% of the agreed service cost.",
+          "We reserve the right to cancel or reschedule appointments due to unforeseen circumstances; we will notify you as soon as possible in such cases.",
         ],
       },
       {
@@ -44,53 +46,20 @@ const sections = [
           "We take all reasonable care while carrying out our services.",
           "We are not liable for pre-existing damage, normal wear and tear, or issues caused by faulty equipment or materials supplied by the client.",
           "Any claims relating to damage must be reported within 24 hours of service completion.",
+          "Our liability is limited to the value of the service provided.",
         ],
       },
       {
         heading: "7. Health and Safety",
-        body: "We reserve the right to refuse or discontinue services if the working environment is deemed unsafe or hazardous to our staff.",
-      },
-    ],
-  },
-  {
-    id: "privacy",
-    title: "Privacy Policy",
-    content: [
-      {
-        heading: "1. Data Collection",
-        body: "Peiris Cleaning Solutions Ltd. may collect personal information including names, contact details, and service addresses for the purpose of providing our services.",
+        body: "We reserve the right to refuse or discontinue services if the working environment is deemed unsafe or hazardous to our staff. Clients must inform us of any known hazards, including pets, allergies, or fragile items, prior to the appointment.",
       },
       {
-        heading: "2. Use of Personal Data",
-        intro: "Personal information is used solely to:",
-        bullets: [
-          "Process bookings",
-          "Communicate with clients",
-          "Improve service quality",
-        ],
-        footer: "We do not sell, rent, or share personal data with third parties.",
+        heading: "8. Service Quality",
+        body: "If you are unsatisfied with any aspect of the service, please contact us within 24 hours of completion so we may assess the concern and take appropriate action, which may include a complimentary re-clean of the affected areas.",
       },
       {
-        heading: "3. Data Protection",
-        body: "We comply with applicable UK data protection legislation. All personal data is stored securely and accessed only when necessary.",
-      },
-      {
-        heading: "4. Client Rights",
-        body: "Clients have the right to request access to, correction of, or deletion of their personal data at any time.",
-      },
-    ],
-  },
-  {
-    id: "refund",
-    title: "Refund Policy",
-    content: [
-      {
-        heading: "",
-        bullets: [
-          "Refunds are considered on a case-by-case basis.",
-          "Any concerns regarding service quality must be reported within 24 hours of service completion.",
-          "Where appropriate, a re-clean may be offered as an alternative to a refund.",
-        ],
+        heading: "9. Governing Law",
+        body: "These Terms and Conditions are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.",
       },
     ],
   },
@@ -112,7 +81,7 @@ export default function TermsPage() {
           >
             <span className="section-badge mb-4">Legal</span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mt-3 mb-4">
-              Terms, Privacy &amp; Refund Policy
+              Terms &amp; Conditions
             </h1>
             <p className="text-muted-foreground text-lg">
               Last updated: March 2026 &nbsp;·&nbsp; Peiris Cleaning Solutions Ltd.
@@ -183,14 +152,19 @@ export default function TermsPage() {
             >
               <h3 className="font-semibold text-foreground mb-2">Questions?</h3>
               <p className="text-muted-foreground text-sm">
-                If you have any questions regarding these policies, please contact us at{" "}
+                If you have any questions regarding these terms, please contact us at{" "}
                 <a href="mailto:Info@peiriscleaningsolutions.co.uk" className="text-primary hover:underline font-medium">
                   Info@peiriscleaningsolutions.co.uk
                 </a>{" "}
                 or call{" "}
                 <a href="tel:07903599828" className="text-primary hover:underline font-medium">
                   07903 599828
-                </a>.
+                </a>
+                . You can also view our{" "}
+                <a href="/privacy-policy" className="text-primary hover:underline font-medium">
+                  Privacy Policy
+                </a>
+                .
               </p>
             </motion.div>
           </div>
