@@ -20,7 +20,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 const homeFAQs = [
   {
     question: "What areas do you cover?",
-    answer: "We cover all areas across London and the surrounding regions, including Romford, Ilford, Barking, Stratford, Canary Wharf, and more. Not sure if we cover your area? Give us a call on 07903 599828 and we'll confirm.",
+    answer: "We cover all areas across London and the surrounding regions, including Romford, Ilford, Barking, Stratford, Canary Wharf, and more. Not sure if we cover your area? Give us a call on 07903 599828 or 020 3355 8068 and we'll confirm.",
   },
   {
     question: "Are your cleaners insured and vetted?",
@@ -36,7 +36,7 @@ const homeFAQs = [
   },
   {
     question: "How do I get a free quote?",
-    answer: "Simply fill in the contact form on this page, send us a WhatsApp message, or call 07903 599828. We'll get back to you promptly with a no-obligation quote.",
+    answer: "Simply fill in the contact form on this page, send us a WhatsApp message, or call 07903 599828 / 020 3355 8068. We'll get back to you promptly with a no-obligation quote.",
   },
   {
     question: "What if I'm not satisfied with the clean?",

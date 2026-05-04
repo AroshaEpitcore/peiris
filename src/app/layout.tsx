@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Peiris Cleaning Solutions London",
   },
   description:
-    "Peiris Cleaning Solutions offers professional domestic, deep, end of tenancy, and office cleaning services across London. Trusted, affordable & eco-friendly. Call 07903 599828 for a free quote.",
+    "Peiris Cleaning Solutions offers professional domestic, deep, end of tenancy, and office cleaning services across London. Trusted, affordable & eco-friendly. Call 07903 599828 or 020 3355 8068 for a free quote.",
   keywords: [
     "cleaning services London",
     "cleaning services Romford",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     siteName: "Peiris Cleaning Solutions",
     title: "Peiris Cleaning Solutions | Professional Cleaning Services in London",
     description:
-      "Professional domestic, deep, end of tenancy & office cleaning services across London. Eco-friendly products. Call 07903 599828 for a free quote.",
+      "Professional domestic, deep, end of tenancy & office cleaning services across London. Eco-friendly products. Call 07903 599828 or 020 3355 8068 for a free quote.",
     images: [
       {
         url: "/images/herobanner.jpg",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Peiris Cleaning Solutions | Professional Cleaning Services in London",
     description:
-      "Professional cleaning services in London. Domestic, deep, end of tenancy & office cleaning. Free quotes. Call 07903 599828.",
+      "Professional cleaning services in London. Domestic, deep, end of tenancy & office cleaning. Free quotes. Call 07903 599828 or 020 3355 8068.",
     images: ["/images/herobanner.jpg"],
   },
   alternates: {
@@ -90,8 +90,24 @@ const localBusinessSchema = {
   description:
     "Professional domestic, deep, end of tenancy, and office cleaning services across London. Eco-friendly products and trained staff.",
   url: "https://www.peiriscleaningsolutions.co.uk",
-  telephone: "+447903599828",
+  telephone: ["+447903599828", "+442033558068"],
   email: "Info@peiriscleaningsolutions.co.uk",
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+447903599828",
+      contactType: "customer service",
+      areaServed: "GB",
+      availableLanguage: ["English"],
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+442033558068",
+      contactType: "customer service",
+      areaServed: "GB",
+      availableLanguage: ["English"],
+    },
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: "No 2a Chase Cross Road",

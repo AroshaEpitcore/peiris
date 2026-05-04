@@ -195,6 +195,20 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href="tel:02033558068"
+                  className="flex items-center gap-4 transition-colors group"
+                  style={{ color: "rgba(255,255,255,0.65)" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "white"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.65)"; }}
+                >
+                  <div style={iconBoxStyle}>
+                    <Phone className="w-5 h-5 text-white" />
+                  </div>
+                  <span>020 3355 8068</span>
+                </a>
+              </li>
+              <li>
+                <a
                   href="mailto:Info@peiriscleaningsolutions.co.uk"
                   className="flex items-center gap-4 transition-colors"
                   style={{ color: "rgba(255,255,255,0.65)" }}

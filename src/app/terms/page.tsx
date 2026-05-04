@@ -160,6 +160,10 @@ export default function TermsPage() {
                 <a href="tel:07903599828" className="text-primary hover:underline font-medium">
                   07903 599828
                 </a>
+                {" "}/{" "}
+                <a href="tel:02033558068" className="text-primary hover:underline font-medium">
+                  020 3355 8068
+                </a>
                 . You can also view our{" "}
                 <a href="/privacy-policy" className="text-primary hover:underline font-medium">
                   Privacy Policy

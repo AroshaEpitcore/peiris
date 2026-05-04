@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Us | Get a Free Cleaning Quote in London",
   description:
-    "Contact Peiris Cleaning Solutions for a free cleaning quote in London. Call 07903 599828, WhatsApp us, or send an email. We reply within 24 hours. Available Mon–Fri 8am–6pm, Sat 9am–4pm.",
+    "Contact Peiris Cleaning Solutions for a free cleaning quote in London. Call 07903 599828 or 020 3355 8068, WhatsApp us, or send an email. We reply within 24 hours. Available Mon–Fri 8am–6pm, Sat 9am–4pm.",
   keywords: [
     "contact cleaning company London",
     "free cleaning quote London",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Us | Get a Free Cleaning Quote in London",
     description:
-      "Get in touch with Peiris Cleaning Solutions for a free quote. Call 07903 599828 or WhatsApp us today.",
+      "Get in touch with Peiris Cleaning Solutions for a free quote. Call 07903 599828 or 020 3355 8068, or WhatsApp us today.",
     url: "https://www.peiriscleaningsolutions.co.uk/contact",
   },
 };

@@ -9,7 +9,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 const contactFAQs = [
   {
     question: "How do I book a cleaning service?",
-    answer: "You can book by filling in the form above, sending us a WhatsApp message, or calling 07903 599828. We'll confirm your booking and send all details via WhatsApp or email.",
+    answer: "You can book by filling in the form above, sending us a WhatsApp message, or calling 07903 599828 / 020 3355 8068. We'll confirm your booking and send all details via WhatsApp or email.",
   },
   {
     question: "How quickly can you start?",

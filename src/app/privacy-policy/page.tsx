@@ -19,7 +19,7 @@ const sections = [
           "Company: Peiris Cleaning Solutions Ltd.",
           "Address: No 2a Chase Cross Road, Romford, RM5 3PR",
           "Email: Info@peiriscleaningsolutions.co.uk",
-          "Phone: 07903 599828",
+          "Phone: 07903 599828 / 020 3355 8068",
         ],
       },
     ],
@@ -290,6 +290,10 @@ export default function PrivacyPolicyPage() {
                 or call{" "}
                 <a href="tel:07903599828" className="text-primary hover:underline font-medium">
                   07903 599828
+                </a>
+                {" "}/{" "}
+                <a href="tel:02033558068" className="text-primary hover:underline font-medium">
+                  020 3355 8068
                 </a>
                 . Also see our{" "}
                 <a href="/terms" className="text-primary hover:underline font-medium">

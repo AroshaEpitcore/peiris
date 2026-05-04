@@ -14,11 +14,19 @@ import {
 const contactMethods = [
   {
     icon: Phone,
-    title: "Phone",
+    title: "Phone (Mobile)",
     value: "07903 599828",
     href: "tel:07903599828",
     color: "bg-blue-500",
     description: "Call us for a free quote",
+  },
+  {
+    icon: Phone,
+    title: "Phone (Office)",
+    value: "020 3355 8068",
+    href: "tel:02033558068",
+    color: "bg-blue-500",
+    description: "Call our office line",
   },
   {
     icon: Mail,

@@ -367,14 +367,26 @@ export default function Rooms() {
           Customer satisfaction is our top priority! All services include professional
           equipment and trained staff.
         </p>
-        <motion.a
-          href="tel:07903599828"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-flex items-center gap-2 text-primary font-semibold text-lg hover:underline"
-        >
-          Call 07903 599828 for a free quote
-        </motion.a>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+          <motion.a
+            href="tel:07903599828"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 text-primary font-semibold text-lg hover:underline"
+          >
+            Call 07903 599828
+          </motion.a>
+          <span className="text-muted-foreground hidden sm:inline">or</span>
+          <motion.a
+            href="tel:02033558068"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 text-primary font-semibold text-lg hover:underline"
+          >
+            Call 020 3355 8068
+          </motion.a>
+          <span className="text-muted-foreground">for a free quote</span>
+        </div>
       </motion.div>
     </section>
   );

@@ -149,6 +149,28 @@ export default function HomeAbout() {
                   </p>
                 </div>
               </a>
+
+              <a
+                href="tel:02033558068"
+                className="flex items-center gap-3 group"
+                style={{ border: "2px solid #00C2FF", borderRadius: "50px", padding: "8px 16px 8px 8px" }}
+              >
+                <div
+                  className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{ background: "#00C2FF" }}
+                >
+                  <Phone className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">Office Line</p>
+                  <p
+                    className="font-semibold text-sm"
+                    style={{ color: "#000" }}
+                  >
+                    020 3355 8068
+                  </p>
+                </div>
+              </a>
             </motion.div>
           </div>
 

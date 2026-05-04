@@ -199,6 +199,15 @@ export default function Hero() {
             07903 599828
           </motion.a>
           <motion.a
+            href="tel:02033558068"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="btn bg-accent text-primary-dark font-semibold text-lg hover:bg-accent/90 shadow-lg px-10 py-4"
+          >
+            <Phone className="w-5 h-5" />
+            020 3355 8068
+          </motion.a>
+          <motion.a
             href="#contact-form"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
