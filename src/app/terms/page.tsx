@@ -45,7 +45,7 @@ const sections = [
         bullets: [
           "We take all reasonable care while carrying out our services.",
           "We are not liable for pre-existing damage, normal wear and tear, or issues caused by faulty equipment or materials supplied by the client.",
-          "Any claims relating to damage must be reported within 24 hours of service completion.",
+          "Any damage to your property caused during or as a result of our cleaning service must be reported to us within 48 hours of service completion. Claims submitted after this period will not be accepted, and Peiris Cleaning Solutions Ltd. shall not be held responsible or liable for any such damage.",
           "Our liability is limited to the value of the service provided.",
         ],
       },
